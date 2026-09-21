@@ -4,7 +4,7 @@ Hands-on learning workspace for Geant4 11.4.x on Windows 11 + WSL2 + Ubuntu 24.0
 
 ## Current stage
 
-`HandsOn01 / B1`
+`HandsOn02 / Exercise 1a`
 
 The learning status, verified environment, and next conceptual target are maintained in
 [`LEARNING_PROGRESS.md`](LEARNING_PROGRESS.md).

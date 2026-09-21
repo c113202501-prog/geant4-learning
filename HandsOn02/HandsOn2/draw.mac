@@ -1,0 +1,26 @@
+########################################
+#
+# drawing projections
+#
+# 以下四行一次只能用一個
+# /score/drawProjection boxMesh_1 eDep
+# /score/drawProjection boxMesh_1 nOfStepGamma
+# /score/drawProjection boxMesh_1 nOfStepEMinus
+# /score/drawProjection boxMesh_1 nOfStepEPlus
+#
+########################################
+#
+# drawing slices
+#
+/vis/scene/create
+/vis/sceneHandler/attach scene-1
+/score/colorMap/setMinMax ! 0. 800.
+# /control/loop drawSlice.mac iColumn 0 10 3
+#
+########################################
+#
+# Dump scores to a file
+#
+#
+#
+# 在Geant4 11.3.0版本中，有些功能有異常->需等待2025.12的版本修復

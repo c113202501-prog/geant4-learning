@@ -4,9 +4,9 @@
 
 ## 目前階段
 
-HandsOn01 / B1
+HandsOn02 / Exercise 1a
 
-目前目標：在 40 分鐘學習單元內完成 B1，並完成下一個實作檢查點。
+目前目標：不依賴已填好的答案，理解並實作 CsI 材料定義。
 
 ## 環境
 
@@ -67,6 +67,14 @@ HandsOn01 / B1
 - 尚未評為 `INDEPENDENT`：還未在沒有逐步提示下自行修改或重建流程。
 - 尚未評為 `TRANSFERRED`：還未更換 scoring volume 或情境進行遷移測試。
 
+### HandsOn02 / Exercise 1a
+
+- `G4Element(name, symbol, Z, A)` 參數意義：`UNDERSTOOD`。
+- `G4Material(name, density, ncomponents)` 的 `ncomponents`：`UNDERSTOOD`。
+- `AddElement(element, natoms)` 的整數參數代表相對原子數：`UNDERSTOOD`。
+- 化學計量轉換：`UNDERSTOOD`；例如 I×3、Cs×2 對應 `Cs2I3`。
+- 課程 supplied problem 檔已含答案；尚未因此標記為獨立實作完成。
+
 ### 環境與執行
 
 - B1 已在 WSL 中以 GNU C++ 13.3、CMake 3.28.3 重新編譯。
@@ -103,20 +111,16 @@ HandsOn01 / B1
 
 ## 下一步
 
-完成一次不看提示的 B1 全流程口頭重建，再決定是否進入下一個 exercise：
+完成 HandsOn02 Exercise 1a 的獨立材料定義與 build/run 驗證：
 
 ```text
-PrimaryGeneratorAction
+define I and Cs elements
         ↓
-primary vertex / primary track
+construct material with density 4.51 g/cm3 and two components
         ↓
-tracking and steps using the configured Physics List
+add I:Cs with 1:1 atom-count stoichiometry
         ↓
-SteppingAction collects energy deposit in Shape2
-        ↓
-EventAction accumulates one event
-        ↓
-RunAction combines events and calculates dose
+build and verify the material table/runtime output
 ```
 
 本階段的完成證據：
@@ -132,6 +136,7 @@ RunAction combines events and calculates dose
 
 - GitHub：`https://github.com/c113202501-prog/geant4-learning`
 - Repository source：`HandsOn01/B1`
+- HandsOn02 source：`HandsOn02/HandsOn2`
 - WSL build output remains outside Git：`/home/sundae/jlab-build/HandsOn01-B1`
 
 ### JLab 課程

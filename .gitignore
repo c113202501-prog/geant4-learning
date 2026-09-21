@@ -14,6 +14,7 @@ Makefile
 *.exe
 *.out
 !HandsOn01/B1/exampleB1.out
+!HandsOn02/HandsOn2/tutorial.out
 *.o
 *.obj
 *.so
