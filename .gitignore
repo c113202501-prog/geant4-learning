@@ -1,0 +1,25 @@
+# Codex scratch and generated outputs
+/work/
+/outputs/
+
+# Build products
+/build/
+/cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# Native binaries and libraries
+*.exe
+*.out
+*.o
+*.obj
+*.so
+*.dylib
+
+# Geant4 runtime output
+G4History.macro
+*.prim
+*.heprep
+*.wrl

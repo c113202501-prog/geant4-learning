@@ -1,0 +1,132 @@
+# Geant4 Learning Progress
+
+最後更新：2026-09-21（Asia/Taipei）
+
+## 目前階段
+
+HandsOn01 / B1
+
+目前目標：在 40 分鐘學習單元內完成 B1，並完成下一個實作檢查點。
+
+## 環境
+
+- Windows 11 + WSL2
+- WSL distribution：Ubuntu 24.04 LTS
+- WSL architecture：x86_64
+- Geant4：11.4.2
+- Geant4 environment：`/home/sundae/geant4/install/bin/geant4.sh`
+- Linux build directory：`/home/sundae/jlab-build/HandsOn01-B1`
+- Linux executable：`/home/sundae/jlab-build/HandsOn01-B1/exampleB1`
+- Qt / WSLg visualization：成功（學習者回報）
+
+## 已完成
+
+### 概念
+
+- 理解 `solid → logical volume → physical volume` 的基本層級。
+- 知道 material 屬於 logical volume。
+- 知道同一個 `G4LogicalVolume` 可以有多個 physical placements。
+- 知道 `fScoringVolume` 指向 scoring logical volume。
+- 已通過 B1 geometry pre-exercise gate，不再重複考 geometry 基礎。
+
+### 環境與執行
+
+- B1 已在 WSL 中以 GNU C++ 13.3、CMake 3.28.3 重新編譯。
+- 產物已確認為 Linux ELF 64-bit x86-64 執行檔。
+- CMake 已確認找到 Geant4 11.4.2。
+- Codex 已以 `run1.mac` 完成 batch smoke test，process exit code 為 0。
+- `/run/beamOn 1` 成功，完成 1 event（學習者回報）。
+
+## Needs Reinforcement
+
+- Primary particle settings 與 Physics List 的責任不同：
+  - `PrimaryGeneratorAction` 建立 event 的初始粒子、能量、方向與位置。
+  - Physics List 提供輸運時可用的物理過程與模型。
+
+## Not Required Yet
+
+- detailed scoring mechanism
+- step-selection implementation details
+- copy-number usage
+- physics-process competition
+- sensitive detector 與 hit collection
+- `G4Accumulable` 的多執行緒細節
+
+## 目前學習原則
+
+- 以進入實作為主，不先完整學完 Geant4。
+- 理論只補到足以知道目前正在做什麼。
+- 採用 `retrieve → verify → teach → test`。
+- 區分 physical phenomenon、physical model、Monte Carlo representation、Geant4 implementation、observable。
+- ChatGPT 負責概念鏈、理解檢查、先備需求與 mastery 判斷。
+- Codex 負責查看程式、修改、build、run、驗證，並更新本檔。
+- 程式成功執行不自動等於概念已理解。
+- 未經學習者自行解釋或轉移應用，不標記為 `UNDERSTOOD`、`INDEPENDENT` 或 `TRANSFERRED`。
+
+## 下一步
+
+從一次 event 的流程開始理解：
+
+```text
+PrimaryGeneratorAction
+        ↓
+primary vertex / primary track
+        ↓
+tracking and steps using the configured Physics List
+        ↓
+SteppingAction collects energy deposit in Shape2
+        ↓
+EventAction accumulates one event
+        ↓
+RunAction combines events and calculates dose
+```
+
+本階段的完成證據：
+
+1. 學習者能用自己的話說明 primary settings 與 Physics List 的差異。
+2. 學習者能沿 B1 程式指出一個 event 的資料流。
+3. 學習者能區分視覺化軌跡、energy deposit、dose 與實驗偵測器訊號。
+4. 完成下一個實作檢查點，並記錄修改、預測、觀察與解釋。
+
+## 教材與程式位置
+
+### JLab 課程
+
+- 課程根目錄：`C:\Users\User\Downloads\JLab_Geant4School2025\JLab_Geant4School2025`
+- B1 source：`C:\Users\User\Downloads\JLab_Geant4School2025\JLab_Geant4School2025\HandsOn01\B1`
+- HandsOn02：`C:\Users\User\Downloads\JLab_Geant4School2025\JLab_Geant4School2025\HandsOn02\HandsOn2-problem`
+- HandsOn03：`C:\Users\User\Downloads\JLab_Geant4School2025\JLab_Geant4School2025\HandsOn03\HandsOn3-problem`
+- 課程講義：`C:\Users\User\Downloads\JLab_Geant4School2025\JLab_Geant4School2025\Materials`
+
+### 指定參考資料
+
+- Geant4 11.4 Book for Application Developers：`C:\Users\User\Downloads\BookForApplicationDevelopers.pdf`
+- Leo, *Techniques for Nuclear and Particle Physics Experiments*：`C:\Users\User\Downloads\Techniques-for-nuclear-and-parti.epub`
+- Knoll, *Radiation Detection and Measurement*：`C:\Users\User\Downloads\Radiation detection and measurement (Knoll, Glenn F) (z-library.sk, 1lib.sk, z-lib.sk).pdf`
+- 許淑艷，《蒙特卡罗方法在实验核物理中的应用》：`C:\Users\User\Downloads\蒙特卡罗方法在实验核物理中的应用 (许淑艳编著, 许淑艳编著, 许淑艳) (z-library.sk, 1lib.sk, z-lib.sk).pdf`
+
+### 教學準則
+
+- Geant4 Learning & Verification Protocol：`C:\Users\User\.codex\attachments\09319b4d-2080-4a89-b7d4-9c0fb98bb0cd\pasted-text.txt`
+- Geant4 Learning Sources and Reference Policy：`C:\Users\User\.codex\attachments\a78f0b60-7758-4707-a9d0-4d71fa0020c0\pasted-text.txt`
+- Teaching Grounding & Verification Protocol：`C:\Users\User\.codex\attachments\bfa3ac62-5271-49c8-b828-a3b4ed448c2d\pasted-text.txt`
+
+## 證據標籤
+
+- `[LEARNER-REPORTED]`：由學習者回報，尚未由 Codex 重做驗證。
+- `[CODEX-VERIFIED]`：Codex 已直接檢查程式、build 或執行結果。
+- `[SOURCE-VERIFIED]`：已由指定的課程、Geant4 官方文件或參考書支持。
+- `[UNVERIFIED]`：目前資料不足，不推測。
+
+## 更新規則
+
+每完成一個實作檢查點，至少記錄：
+
+1. 題目與預期結果。
+2. 修改的檔案與核心變更。
+3. build/run 驗證命令。
+4. 實際觀察結果。
+5. 錯誤分類與修正（若有）。
+6. mastery 狀態：`SEEN / UNDERSTOOD / INDEPENDENT / TRANSFERRED / RETAINED`。
+
+任何助手開始新工作前，先讀本檔；完成可驗證進展後，再更新本檔。
