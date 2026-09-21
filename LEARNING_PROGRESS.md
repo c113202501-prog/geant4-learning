@@ -28,6 +28,13 @@ HandsOn01 / B1
 - 知道同一個 `G4LogicalVolume` 可以有多個 physical placements。
 - 知道 `fScoringVolume` 指向 scoring logical volume。
 - 已通過 B1 geometry pre-exercise gate，不再重複考 geometry 基礎。
+- `PrimaryGeneratorAction` 初始狀態：`UNDERSTOOD`。
+  - 每個 event 產生 1 個 primary gamma。
+  - 能量固定為 6 MeV。
+  - 初始動量方向固定為 `(0, 0, 1)`，沿 `+z`。
+  - `z0` 固定在 Envelope 的負 z 端（`-15 cm`）。
+  - `x0`、`y0` 在每個 event 重新隨機取樣（各約為 `-8 cm` 至 `+8 cm`）。
+  - 完成證據：學習者未照抄提示，能自行區分固定條件與 event-by-event 隨機條件。
 
 ### 環境與執行
 
@@ -65,7 +72,7 @@ HandsOn01 / B1
 
 ## 下一步
 
-從一次 event 的流程開始理解：
+從 primary vertex 進入 tracking 的流程開始理解：
 
 ```text
 PrimaryGeneratorAction
