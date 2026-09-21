@@ -39,6 +39,12 @@ HandsOn01 / B1
   - `Step# 0` 表示 track 建立時的初始狀態，尚未完成第一個輸運 step。
   - `Step# 1` 及後續各列表示相應 step 完成後的狀態。
   - 完成證據：學習者依實際 verbose table 正確辨認第 0、1、2 列的意義。
+- B1 scoring-volume filter：`UNDERSTOOD`。
+  - `SteppingAction` 不會累積所有 volumes 的能量沉積。
+  - 只有 current logical volume 等於 `fScoringVolume` 時才繼續。
+  - B1 的 `fScoringVolume` 指向 `logicShape2`。
+  - 傳給 `EventAction` 的是該 step 的 `edepStep` 數值，而不是整個 `G4Step`。
+  - 完成證據：學習者正確辨認 volume equality check 與 early return。
 
 ### 環境與執行
 
