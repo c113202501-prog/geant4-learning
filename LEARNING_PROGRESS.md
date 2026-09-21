@@ -60,6 +60,10 @@ HandsOn01 / B1
 ### B1 mastery snapshot
 
 - `PrimaryGeneratorAction → tracking → step filter → EventAction → RunAction → dose`：`UNDERSTOOD`
+- B1 integrated explanation gate：`PASSED`。
+  - 學習者能從每 event 的 6 MeV gamma 開始，說明 event reset、tracking、材料作用、能量沉積、run accumulation、worker merge、RMS、mass 與 dose。
+  - 版本查證：B1 直接註冊 reference physics list `QBBC`；Geant4 11.4.2 的 `QBBC.cc` 內部註冊 `G4EmStandardPhysics`，兩者屬不同抽象層級。
+  - 精確補充：primary 的 `x0/y0` 依分布隨機，`z0` 與初始方向固定；只有 Shape2 中的 step energy deposit 被計入。
 - 尚未評為 `INDEPENDENT`：還未在沒有逐步提示下自行修改或重建流程。
 - 尚未評為 `TRANSFERRED`：還未更換 scoring volume 或情境進行遷移測試。
 
