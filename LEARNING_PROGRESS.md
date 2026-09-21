@@ -45,6 +45,11 @@ HandsOn01 / B1
   - B1 的 `fScoringVolume` 指向 `logicShape2`。
   - 傳給 `EventAction` 的是該 step 的 `edepStep` 數值，而不是整個 `G4Step`。
   - 完成證據：學習者正確辨認 volume equality check 與 early return。
+- Event-level energy accumulation：`UNDERSTOOD`。
+  - `fEdep` 只代表目前一個 event 內所有合格 steps 的能量沉積總和。
+  - `BeginOfEventAction()` 必須將 `fEdep` 歸零，避免上一個 event 污染下一個 event。
+  - `EndOfEventAction()` 將完成的 event total 傳給 `RunAction`。
+  - 完成證據：學習者能解釋 event boundary，並正確計算 `1 + 2 + 0.5 = 3.5 MeV`。
 
 ### 環境與執行
 
