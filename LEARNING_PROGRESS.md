@@ -50,6 +50,18 @@ HandsOn01 / B1
   - `BeginOfEventAction()` 必須將 `fEdep` 歸零，避免上一個 event 污染下一個 event。
   - `EndOfEventAction()` 將完成的 event total 傳給 `RunAction`。
   - 完成證據：學習者能解釋 event boundary，並正確計算 `1 + 2 + 0.5 = 3.5 MeV`。
+- Run-level accumulation and dose：`UNDERSTOOD`。
+  - `RunAction::fEdep` 累積各 event 的 total energy deposit，而非直接累積 `G4Step`。
+  - 三個 event totals `3.5 + 0 + 1.5 MeV` 會得到 run total `5.0 MeV`。
+  - B1 使用 `dose = edep / scoring-volume mass`。
+  - 在 total energy deposit 不變時，scoring-volume mass 加倍會使 dose 減半。
+  - 完成證據：學習者正確計算 run total，並由公式推導質量變化對 dose 的影響。
+
+### B1 mastery snapshot
+
+- `PrimaryGeneratorAction → tracking → step filter → EventAction → RunAction → dose`：`UNDERSTOOD`
+- 尚未評為 `INDEPENDENT`：還未在沒有逐步提示下自行修改或重建流程。
+- 尚未評為 `TRANSFERRED`：還未更換 scoring volume 或情境進行遷移測試。
 
 ### 環境與執行
 
@@ -87,7 +99,7 @@ HandsOn01 / B1
 
 ## 下一步
 
-從 primary vertex 進入 tracking 的流程開始理解：
+完成一次不看提示的 B1 全流程口頭重建，再決定是否進入下一個 exercise：
 
 ```text
 PrimaryGeneratorAction
