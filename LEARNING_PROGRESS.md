@@ -35,6 +35,10 @@ HandsOn01 / B1
   - `z0` 固定在 Envelope 的負 z 端（`-15 cm`）。
   - `x0`、`y0` 在每個 event 重新隨機取樣（各約為 `-8 cm` 至 `+8 cm`）。
   - 完成證據：學習者未照抄提示，能自行區分固定條件與 event-by-event 隨機條件。
+- Tracking table 基本閱讀：`UNDERSTOOD`。
+  - `Step# 0` 表示 track 建立時的初始狀態，尚未完成第一個輸運 step。
+  - `Step# 1` 及後續各列表示相應 step 完成後的狀態。
+  - 完成證據：學習者依實際 verbose table 正確辨認第 0、1、2 列的意義。
 
 ### 環境與執行
 
