@@ -90,6 +90,12 @@ RunAction combines events and calculates dose
 
 ## 教材與程式位置
 
+### Git repository
+
+- GitHub：`https://github.com/c113202501-prog/geant4-learning`
+- Repository source：`HandsOn01/B1`
+- WSL build output remains outside Git：`/home/sundae/jlab-build/HandsOn01-B1`
+
 ### JLab 課程
 
 - 課程根目錄：`C:\Users\User\Downloads\JLab_Geant4School2025\JLab_Geant4School2025`

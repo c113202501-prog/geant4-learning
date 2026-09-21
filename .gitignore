@@ -13,6 +13,7 @@ Makefile
 # Native binaries and libraries
 *.exe
 *.out
+!HandsOn01/B1/exampleB1.out
 *.o
 *.obj
 *.so
