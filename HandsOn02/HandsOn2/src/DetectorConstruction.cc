@@ -175,10 +175,13 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
     //   Dimensions (x,y,z): 300x60x100 cm
     //   Position: on the far back of the "second arm" volume
     // =============================================
-    G4Material* material = G4Material::GetMaterial("CsI");
-    G4Material* material2 = G4Material::GetMaterial("G4_PLASTIC_SC_VINYLTOLUENE");
+    G4Material* mat_csi = G4Material::GetMaterial("CsI");
+    G4Material* mat_pb = G4Material::GetMaterial("G4_Pb");
+    G4Material* mat_scintillator =
+      G4Material::GetMaterial("G4_PLASTIC_SC_VINYLTOLUENE");
+    G4Material* absorberMaterial = mat_pb;
     G4VSolid* hadCalorimeterSolid = new G4Box("HadCalorimeterBox",1.5*m,30.*cm,50.*cm);
-    G4LogicalVolume* hadCalorimeterLogical = new G4LogicalVolume(hadCalorimeterSolid,material,"HadCalorimeterLogical");
+    G4LogicalVolume* hadCalorimeterLogical = new G4LogicalVolume(hadCalorimeterSolid,absorberMaterial,"HadCalorimeterLogical");
     new G4PVPlacement(0,G4ThreeVector(0.,0.,3.*m),hadCalorimeterLogical,"HadCalorimeterPhysical",secondArmLogical,false,0,checkOverlaps);
 
 

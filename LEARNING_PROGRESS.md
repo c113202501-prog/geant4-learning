@@ -100,6 +100,16 @@ HandsOn02 / Exercise 2b
 - WSL + Geant4 11.4.2 build 驗證：`[100%] Built target G4tut`。`[CODEX-VERIFIED]`
 - Mastery：`UNDERSTOOD`；本次使用逐格提示，尚不標記為 `INDEPENDENT`。
 
+### HandsOn02 / Exercise 2b（進行中）
+
+- 將材料指標統一命名為 `mat_csi`、`mat_pb`、`mat_scintillator`。
+- 新增單一材料選擇點 `absorberMaterial`；目前指定為 `mat_pb`，geometry construction 僅使用此指標。
+- 學習者最初寫成 `G4Material:GetMaterial("Pb")`：
+  - `G4Material:` 應為 C++ scope-resolution operator `G4Material::`。
+  - 鉛的 NIST material name 應為 `"G4_Pb"`，不是 `"Pb"`。
+- 修正後 build 成功，batch run 正常處理 5 events；material-cuts couple 顯示 `G4_Pb` 已用於 geometry。`[CODEX-VERIFIED]`
+- 尚待完成：在控制其他條件相同下比較不同 absorber 的 shower dimensions。
+
 ### 環境與執行
 
 - B1 已在 WSL 中以 GNU C++ 13.3、CMake 3.28.3 重新編譯。
