@@ -4,9 +4,9 @@
 
 ## 目前階段
 
-HandsOn02 / Exercise 2a
+HandsOn02 / Exercise 2b
 
-目前目標：用已建立的材料製作 absorber box，連結 solid、logical volume 與 physical placement。
+目前目標：只改 absorber material，在相同幾何與 primary 條件下比較 shower dimensions。
 
 ## 環境
 
@@ -88,6 +88,18 @@ HandsOn02 / Exercise 2a
 - 能區分手動建立複合材料 CsI 與向 NIST manager 查找／建立鉛材料。
 - Mastery：`UNDERSTOOD`；因有提示，尚不標記為 `INDEPENDENT`。
 
+### HandsOn02 / Exercise 2a
+
+- 夏校式引導填空：`PASSED`。
+- 正確以 `G4Material::GetMaterial("CsI")` 取得已建立的 CsI，而非重新建立材料。
+- 正確將完整尺寸 `300 × 60 × 100 cm` 換算為 `G4Box` 半長 `150 × 30 × 50 cm`。
+- 正確建立 `G4LogicalVolume(solid, material, name)`。
+  - 過程中曾填入未宣告的 `CSI`，經提示後能區分材料名稱字串 `"CsI"` 與材料指標變數 `material`。
+  - 錯誤分類：`C++ identifier / Geant4 object-reference confusion`，不是材料物理概念錯誤。
+- 正確使用 `G4PVPlacement`，將 `hadCalorimeterLogical` 放入母體 `secondArmLogical` 的 `(0,0,3 m)`。
+- WSL + Geant4 11.4.2 build 驗證：`[100%] Built target G4tut`。`[CODEX-VERIFIED]`
+- Mastery：`UNDERSTOOD`；本次使用逐格提示，尚不標記為 `INDEPENDENT`。
+
 ### 環境與執行
 
 - B1 已在 WSL 中以 GNU C++ 13.3、CMake 3.28.3 重新編譯。
@@ -124,16 +136,16 @@ HandsOn02 / Exercise 2a
 
 ## 下一步
 
-進入 HandsOn02 Exercise 2a，以引導填空方式建立 CsI absorber box：
+進入 HandsOn02 Exercise 2b，以控制變因方式比較 CsI、Pb 與 plastic scintillator：
 
 ```text
-retrieve the CsI material by name
+keep geometry and primary settings fixed
         ↓
-create a 300 × 60 × 100 cm box solid
+change only the logical volume's material
         ↓
-create its logical volume with CsI
+run the same event configuration
         ↓
-place it at the back of the second arm
+compare shower dimensions without over-interpreting one event
 ```
 
 本階段的完成證據：
