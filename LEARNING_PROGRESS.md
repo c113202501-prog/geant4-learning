@@ -1,12 +1,12 @@
 # Geant4 Learning Progress
 
-最後更新：2026-09-22（Asia/Taipei）
+最後更新：2026-09-23（Asia/Taipei）
 
 ## 目前階段
 
-HandsOn02 / Exercise 1a
+HandsOn02 / Exercise 2a
 
-目前目標：不依賴已填好的答案，理解並實作 CsI 材料定義。
+目前目標：用已建立的材料製作 absorber box，連結 solid、logical volume 與 physical placement。
 
 ## 環境
 
@@ -80,6 +80,14 @@ HandsOn02 / Exercise 1a
 - Mastery 維持 `UNDERSTOOD`：本次有填空框架與數值提示，尚不標記為 `INDEPENDENT`。
 - 課程 supplied problem 檔已含答案；不以該檔既有內容當成獨立實作證據。
 
+### HandsOn02 / Exercise 1b
+
+- 夏校式引導填空：`PASSED`。
+- 正確寫出 `nistManager->FindOrBuildMaterial("G4_Pb");`。
+- 正確辨認 `G4_Pb` 是 Geant4 NIST material name，不是 C++ 變數或物理過程。
+- 能區分手動建立複合材料 CsI 與向 NIST manager 查找／建立鉛材料。
+- Mastery：`UNDERSTOOD`；因有提示，尚不標記為 `INDEPENDENT`。
+
 ### 環境與執行
 
 - B1 已在 WSL 中以 GNU C++ 13.3、CMake 3.28.3 重新編譯。
@@ -116,16 +124,16 @@ HandsOn02 / Exercise 1a
 
 ## 下一步
 
-進入 HandsOn02 Exercise 1b，以引導填空方式從 NIST material database 取得 lead：
+進入 HandsOn02 Exercise 2a，以引導填空方式建立 CsI absorber box：
 
 ```text
-obtain the NIST manager
+retrieve the CsI material by name
         ↓
-request the Geant4 lead material by its NIST name
+create a 300 × 60 × 100 cm box solid
         ↓
-distinguish database lookup from constructing CsI manually
+create its logical volume with CsI
         ↓
-build and verify
+place it at the back of the second arm
 ```
 
 本階段的完成證據：
