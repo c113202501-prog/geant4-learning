@@ -1,6 +1,6 @@
 # Geant4 Learning Progress
 
-最後更新：2026-09-21（Asia/Taipei）
+最後更新：2026-09-22（Asia/Taipei）
 
 ## 目前階段
 
@@ -73,7 +73,12 @@ HandsOn02 / Exercise 1a
 - `G4Material(name, density, ncomponents)` 的 `ncomponents`：`UNDERSTOOD`。
 - `AddElement(element, natoms)` 的整數參數代表相對原子數：`UNDERSTOOD`。
 - 化學計量轉換：`UNDERSTOOD`；例如 I×3、Cs×2 對應 `Cs2I3`。
-- 課程 supplied problem 檔已含答案；尚未因此標記為獨立實作完成。
+- 夏校式引導填空：`PASSED`。
+  - 學習者正確填入 I、Cs 的名稱、符號、原子序、莫耳質量、CsI 密度、兩種 components，以及 I:Cs = 1:1 的相對原子數。
+  - 唯一錯誤是 `new G4Material(..., 2));` 多一個右括號，分類為 `C++ / simple syntax typo`，不是 Geant4 概念錯誤。
+  - 修正後 repository source 已在 WSL + Geant4 11.4.2 重新編譯，結果為 `[100%] Built target G4tut`。`[CODEX-VERIFIED]`
+- Mastery 維持 `UNDERSTOOD`：本次有填空框架與數值提示，尚不標記為 `INDEPENDENT`。
+- 課程 supplied problem 檔已含答案；不以該檔既有內容當成獨立實作證據。
 
 ### 環境與執行
 
@@ -111,16 +116,16 @@ HandsOn02 / Exercise 1a
 
 ## 下一步
 
-完成 HandsOn02 Exercise 1a 的獨立材料定義與 build/run 驗證：
+進入 HandsOn02 Exercise 1b，以引導填空方式從 NIST material database 取得 lead：
 
 ```text
-define I and Cs elements
+obtain the NIST manager
         ↓
-construct material with density 4.51 g/cm3 and two components
+request the Geant4 lead material by its NIST name
         ↓
-add I:Cs with 1:1 atom-count stoichiometry
+distinguish database lookup from constructing CsI manually
         ↓
-build and verify the material table/runtime output
+build and verify
 ```
 
 本階段的完成證據：
