@@ -4,9 +4,9 @@
 
 ## 目前階段
 
-HandsOn02 / Exercise 2b complete
+HandsOn02 / Exercise 3a complete
 
-目前狀態：電磁 shower 物理因果鏈與 Pb/CsI radiation-length 比較已確認理解；等待學習者決定是否進入 Exercise 3a。
+目前狀態：command-based scoring manager 的角色、C++ pointer 與 compile/runtime 分工已確認理解；下一步閱讀 `scoring.mac` 的 mesh 定義。
 
 ## 環境
 
@@ -124,6 +124,19 @@ HandsOn02 / Exercise 2b complete
   - 整合回答曾把電離與制動輻射串成同一過程；經針對性修正後，能獨立重述正確的制動輻射起始機制。
   - 尚未標記為 `INDEPENDENT` 或 `TRANSFERRED`：目前是在引導教學後完成因果解釋，尚未遷移到新材料／新能量情境。
 
+### HandsOn02 / Exercise 3a
+
+- Mastery：`UNDERSTOOD`；supplied source 已含答案，因此不標記為 `INDEPENDENT`。
+- 能區分 particle transport 與 scoring：移除 scoring manager 不會阻止 geometry/physics/primary 所驅動的 transport，但 command-based scoring mesh 將無法正常使用。
+- 能區分 scoring configuration 與 result data：manager 管理 mesh/scorer 設定，各 bin 數值是模擬後的累積結果。
+- 能說明 `G4ScoringManager` 採共用 manager object 的必要性，避免 scoring configuration 分裂。
+- C++ pointer：能說明 `scManager` 保存共用 object 的位址，`->` 要求其指向的 object 執行 method。
+- `SetVerboseLevel(1)`：只改變 scoring 訊息詳細程度，不改變物理 transport 或 scoring 數值。
+- Compile/runtime 分工：
+  - `#include "G4ScoringManager.hh"` 在 preprocessing／編譯階段提供 class/interface declarations，不會建立 runtime object。
+  - `GetScoringManager()` 在程式執行階段取得 singleton；若尚不存在則建立，若已存在則回傳同一共用 object 的位址。
+- 錯誤修正證據：曾把 scoring manager 誤認為 transport 的必要條件，並曾稱 `#include` 為「呼叫函式庫」；經教學後能獨立修正兩者。
+
 ### 環境與執行
 
 - B1 已在 WSL 中以 GNU C++ 13.3、CMake 3.28.3 重新編譯。
@@ -163,16 +176,16 @@ HandsOn02 / Exercise 2b complete
 
 ## 下一步
 
-下一階段為 HandsOn02 Exercise 3a；開始前先依準則定位於完整實驗鏈並展示真實程式：
+下一步閱讀 `scoring.mac`，從 scoring mesh 的物理角色開始：
 
 ```text
-locate scoring after transport and energy deposition
+locate the mesh in transport → measurement flow
         ↓
-show the relevant tutorial.cc context
+distinguish scoring mesh from detector geometry
         ↓
-predict why a scoring manager is needed
+understand mesh size, position and bins one concept at a time
         ↓
-teach one concept, then verify it before continuing
+connect energy-deposit quantities to physical observables
 ```
 
 本階段的完成證據：
