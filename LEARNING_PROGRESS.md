@@ -149,6 +149,7 @@ HandsOn02 / Exercise 2b reinforcement
 - 採用 `retrieve → verify → teach → test`。
 - 每個新主題必須先展示真實程式及其上下文，再由 ChatGPT 講解，確認學習者已看過後才能測試或要求填空；不得以未教內容突襲測驗。
 - 新增並嚴格遵守學習者提供的 Geant4 + C++ 教練規則：`定位 → 預測 → 教一個概念 → 小考 → 糾正 → Why → 確認理解`；一次只處理一個必要概念。
+- 依 `GEANT4_PHYSICS_KNOWLEDGE_MAP.md`，所有程式教學先定位於完整實驗鏈，並區分 physical process、energy deposit、detector response、scoring/hit 與 reconstructed observable。
 - 區分 physical phenomenon、physical model、Monte Carlo representation、Geant4 implementation、observable。
 - ChatGPT 負責概念鏈、理解檢查、先備需求與 mastery 判斷。
 - Codex 負責查看程式、修改、build、run、驗證，並更新本檔。
@@ -202,6 +203,7 @@ re-evaluate Pb/CsI observations and leakage terminology
 
 ### 教學準則
 
+- Geant4 Physics Knowledge Map：repository root 的 `GEANT4_PHYSICS_KNOWLEDGE_MAP.md`
 - Geant4 Learning & Verification Protocol：`C:\Users\User\.codex\attachments\09319b4d-2080-4a89-b7d4-9c0fb98bb0cd\pasted-text.txt`
 - Geant4 Learning Sources and Reference Policy：`C:\Users\User\.codex\attachments\a78f0b60-7758-4707-a9d0-4d71fa0020c0\pasted-text.txt`
 - Teaching Grounding & Verification Protocol：`C:\Users\User\.codex\attachments\bfa3ac62-5271-49c8-b828-a3b4ed448c2d\pasted-text.txt`
