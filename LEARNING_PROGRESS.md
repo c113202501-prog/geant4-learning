@@ -115,9 +115,14 @@ HandsOn02 / Exercise 2b reinforcement
 - Pb 單一 event 定性觀察：interaction 接近 absorber 入口，在 absorber 內僅發展一小段，並有大角度 secondary 向上游離開。`[LEARNER-REPORTED]`
 - 新術語：沿原入射方向穿出 absorber 為 `forward leakage`；回到入射側／上游為 `backscatter`。Pb 截圖可見 backscatter，未見明顯 forward leakage。
 - 限制：單一 Monte Carlo event 只能作定性示例，不能由一張圖建立材料差異的統計結論。
-- Exercise 2b 操作與觀察：`PASSED`；物理機制 mastery 改列 `SEEN / NEEDS VERIFICATION`。
+- Exercise 2b 操作與觀察：`PASSED`；物理機制 mastery：`UNDERSTOOD`。
   - 學習者主動回報先前答案主要由查單字拼湊，不能作為理解 shower mechanism、radiation length、leakage 或 backscatter 的充分證據。
-  - 在完成 `e± bremsstrahlung → gamma pair production → shower multiplication → energy loss/termination` 因果鏈檢查前，不標記為 `UNDERSTOOD`。
+  - 補強後能說明 `e± bremsstrahlung → gamma pair production → shower multiplication → energy loss/termination` 因果鏈。
+  - 能區分制動輻射與電離：前者由高能帶電粒子受原子核庫侖場作用、偏轉並輻射光子；後者是將能量傳給束縛電子，使電子逸出並留下正離子。
+  - 能說明 shower 不會無限增殖：能量分散後，低能粒子仍可運動，但電離等能量損失逐漸占主導。
+  - 能以 `18.6 mm / 5.613 mm ≈ 3.3` 正確比較 CsI 與 Pb 的 radiation-length 尺度，並指出它是統計尺度而非固定作用位置。
+  - 整合回答曾把電離與制動輻射串成同一過程；經針對性修正後，能獨立重述正確的制動輻射起始機制。
+  - 尚未標記為 `INDEPENDENT` 或 `TRANSFERRED`：目前是在引導教學後完成因果解釋，尚未遷移到新材料／新能量情境。
 
 ### 環境與執行
 
