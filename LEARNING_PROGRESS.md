@@ -4,9 +4,9 @@
 
 ## 目前階段
 
-HandsOn02 / Exercise 2b
+HandsOn02 / Exercise 3a
 
-目前目標：只改 absorber material，在相同幾何與 primary 條件下比較 shower dimensions。
+目前目標：啟用 command-based scoring manager，理解它與 B1 手寫 scoring flow 的差異。
 
 ## 環境
 
@@ -100,7 +100,7 @@ HandsOn02 / Exercise 2b
 - WSL + Geant4 11.4.2 build 驗證：`[100%] Built target G4tut`。`[CODEX-VERIFIED]`
 - Mastery：`UNDERSTOOD`；本次使用逐格提示，尚不標記為 `INDEPENDENT`。
 
-### HandsOn02 / Exercise 2b（進行中）
+### HandsOn02 / Exercise 2b
 
 - 將材料指標統一命名為 `mat_csi`、`mat_pb`、`mat_scintillator`。
 - 新增單一材料選擇點 `absorberMaterial`；目前指定為 `mat_pb`，geometry construction 僅使用此指標。
@@ -108,7 +108,14 @@ HandsOn02 / Exercise 2b
   - `G4Material:` 應為 C++ scope-resolution operator `G4Material::`。
   - 鉛的 NIST material name 應為 `"G4_Pb"`，不是 `"Pb"`。
 - 修正後 build 成功，batch run 正常處理 5 events；material-cuts couple 顯示 `G4_Pb` 已用於 geometry。`[CODEX-VERIFIED]`
-- 尚待完成：在控制其他條件相同下比較不同 absorber 的 shower dimensions。
+- 控制變因檢查：`PASSED`。學習者正確指出比較材料時應保持粒子種類、能量、方向與 geometry 相同。
+- 電磁 shower 預測：`PASSED`。根據 Pb 的 radiation length (`5.613 mm`) 小於 CsI (`1.860 cm`)，預測 Pb 中 shower 會在較短實際距離內發展。
+- event display 辨識經修正：綠色五層是 drift chambers、紅色細條是 hodoscope、白色盒是 absorber；帶 `1 m` 標記的彩色線是座標軸，不是 particle trajectory。
+- CsI 單一 event 定性觀察：shower vertex 位於 absorber 內，可見顯著 secondary multiplicity、扇形 lateral spread 與離開 absorber 的 trajectories。`[LEARNER-REPORTED]`
+- Pb 單一 event 定性觀察：interaction 接近 absorber 入口，在 absorber 內僅發展一小段，並有大角度 secondary 向上游離開。`[LEARNER-REPORTED]`
+- 新術語：沿原入射方向穿出 absorber 為 `forward leakage`；回到入射側／上游為 `backscatter`。Pb 截圖可見 backscatter，未見明顯 forward leakage。
+- 限制：單一 Monte Carlo event 只能作定性示例，不能由一張圖建立材料差異的統計結論。
+- Exercise 2b guided comparison：`PASSED`；Mastery：`UNDERSTOOD`，尚未標記為 `INDEPENDENT` 或 `TRANSFERRED`。
 
 ### 環境與執行
 
@@ -146,16 +153,16 @@ HandsOn02 / Exercise 2b
 
 ## 下一步
 
-進入 HandsOn02 Exercise 2b，以控制變因方式比較 CsI、Pb 與 plastic scintillator：
+進入 HandsOn02 Exercise 3a，以引導填空方式啟用 command-based scorer：
 
 ```text
-keep geometry and primary settings fixed
+include the scoring-manager declaration
         ↓
-change only the logical volume's material
+obtain the singleton scoring manager
         ↓
-run the same event configuration
+set its verbosity
         ↓
-compare shower dimensions without over-interpreting one event
+use scoring.mac to define the mesh and quantities
 ```
 
 本階段的完成證據：
