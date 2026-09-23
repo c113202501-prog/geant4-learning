@@ -145,6 +145,7 @@ HandsOn02 / Exercise 3a
 - 以進入實作為主，不先完整學完 Geant4。
 - 理論只補到足以知道目前正在做什麼。
 - 採用 `retrieve → verify → teach → test`。
+- 每個新主題必須先展示真實程式及其上下文，再由 ChatGPT 講解，確認學習者已看過後才能測試或要求填空；不得以未教內容突襲測驗。
 - 區分 physical phenomenon、physical model、Monte Carlo representation、Geant4 implementation、observable。
 - ChatGPT 負責概念鏈、理解檢查、先備需求與 mastery 判斷。
 - Codex 負責查看程式、修改、build、run、驗證，並更新本檔。
