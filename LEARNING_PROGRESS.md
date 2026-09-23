@@ -4,9 +4,9 @@
 
 ## 目前階段
 
-HandsOn02 / Exercise 3a
+HandsOn02 / Exercise 2b reinforcement
 
-目前目標：啟用 command-based scoring manager，理解它與 B1 手寫 scoring flow 的差異。
+目前目標：建立電磁 shower 的物理因果鏈，再重新驗證 Pb/CsI 比較是否真正理解。
 
 ## 環境
 
@@ -115,7 +115,9 @@ HandsOn02 / Exercise 3a
 - Pb 單一 event 定性觀察：interaction 接近 absorber 入口，在 absorber 內僅發展一小段，並有大角度 secondary 向上游離開。`[LEARNER-REPORTED]`
 - 新術語：沿原入射方向穿出 absorber 為 `forward leakage`；回到入射側／上游為 `backscatter`。Pb 截圖可見 backscatter，未見明顯 forward leakage。
 - 限制：單一 Monte Carlo event 只能作定性示例，不能由一張圖建立材料差異的統計結論。
-- Exercise 2b guided comparison：`PASSED`；Mastery：`UNDERSTOOD`，尚未標記為 `INDEPENDENT` 或 `TRANSFERRED`。
+- Exercise 2b 操作與觀察：`PASSED`；物理機制 mastery 改列 `SEEN / NEEDS VERIFICATION`。
+  - 學習者主動回報先前答案主要由查單字拼湊，不能作為理解 shower mechanism、radiation length、leakage 或 backscatter 的充分證據。
+  - 在完成 `e± bremsstrahlung → gamma pair production → shower multiplication → energy loss/termination` 因果鏈檢查前，不標記為 `UNDERSTOOD`。
 
 ### 環境與執行
 
@@ -146,6 +148,7 @@ HandsOn02 / Exercise 3a
 - 理論只補到足以知道目前正在做什麼。
 - 採用 `retrieve → verify → teach → test`。
 - 每個新主題必須先展示真實程式及其上下文，再由 ChatGPT 講解，確認學習者已看過後才能測試或要求填空；不得以未教內容突襲測驗。
+- 新增並嚴格遵守學習者提供的 Geant4 + C++ 教練規則：`定位 → 預測 → 教一個概念 → 小考 → 糾正 → Why → 確認理解`；一次只處理一個必要概念。
 - 區分 physical phenomenon、physical model、Monte Carlo representation、Geant4 implementation、observable。
 - ChatGPT 負責概念鏈、理解檢查、先備需求與 mastery 判斷。
 - Codex 負責查看程式、修改、build、run、驗證，並更新本檔。
@@ -154,16 +157,16 @@ HandsOn02 / Exercise 3a
 
 ## 下一步
 
-進入 HandsOn02 Exercise 3a，以引導填空方式啟用 command-based scorer：
+暫停 Exercise 3a，先補強 HandsOn02 Exercise 2b 的電磁 shower mental model：
 
 ```text
-include the scoring-manager declaration
+identify how a 1 GeV positron initiates secondaries
         ↓
-obtain the singleton scoring manager
+connect bremsstrahlung and pair production
         ↓
-set its verbosity
+interpret radiation length as a statistical material scale
         ↓
-use scoring.mac to define the mesh and quantities
+re-evaluate Pb/CsI observations and leakage terminology
 ```
 
 本階段的完成證據：
