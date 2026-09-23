@@ -136,6 +136,10 @@ HandsOn02 / Exercise 3a complete
   - `#include "G4ScoringManager.hh"` 在 preprocessing／編譯階段提供 class/interface declarations，不會建立 runtime object。
   - `GetScoringManager()` 在程式執行階段取得 singleton；若尚不存在則建立，若已存在則回傳同一共用 object 的位址。
 - 錯誤修正證據：曾把 scoring manager 誤認為 transport 的必要條件，並曾稱 `#include` 為「呼叫函式庫」；經教學後能獨立修正兩者。
+- Scoring mesh 教學分段：
+  - `3b-1 mesh role`：`UNDERSTOOD`；能區分 absorber geometry 與虛擬測量網格。
+  - `3b-2 mesh size`：`UNDERSTOOD`；`boxSize 150 30 50 cm` 為半長，完整尺寸 `300 × 60 × 100 cm`。
+  - `3b-3 mesh position`：`UNDERSTOOD`；預設 `fArmAngle=0°` 時，second arm world `z=5 m` 加 absorber local `z=3 m`，得到 world `z=8 m`，與 scoring mesh 對準。
 
 ### 環境與執行
 
@@ -203,6 +207,12 @@ connect energy-deposit quantities to physical observables
 - Repository source：`HandsOn01/B1`
 - HandsOn02 source：`HandsOn02/HandsOn2`
 - WSL build output remains outside Git：`/home/sundae/jlab-build/HandsOn01-B1`
+
+### Notion learning workspace
+
+- Workspace：`https://app.notion.com/p/ad09f5095b9c820f98a9015ad28dd43b`
+- Notion 保存知識地圖、各題筆記、錯題與學習進度；Git 保存程式碼與可驗證證據。
+- 已建立 HandsOn01/B1、HandsOn02 Exercises 1–3、完整知識地圖及錯題整理；Exercise 3 標為進行中。
 
 ### JLab 課程
 
