@@ -4,9 +4,9 @@
 
 ## 目前階段
 
-HandsOn02 / Exercise 2b reinforcement
+HandsOn02 / Exercise 2b complete
 
-目前目標：建立電磁 shower 的物理因果鏈，再重新驗證 Pb/CsI 比較是否真正理解。
+目前狀態：電磁 shower 物理因果鏈與 Pb/CsI radiation-length 比較已確認理解；等待學習者決定是否進入 Exercise 3a。
 
 ## 環境
 
@@ -163,16 +163,16 @@ HandsOn02 / Exercise 2b reinforcement
 
 ## 下一步
 
-暫停 Exercise 3a，先補強 HandsOn02 Exercise 2b 的電磁 shower mental model：
+下一階段為 HandsOn02 Exercise 3a；開始前先依準則定位於完整實驗鏈並展示真實程式：
 
 ```text
-identify how a 1 GeV positron initiates secondaries
+locate scoring after transport and energy deposition
         ↓
-connect bremsstrahlung and pair production
+show the relevant tutorial.cc context
         ↓
-interpret radiation length as a statistical material scale
+predict why a scoring manager is needed
         ↓
-re-evaluate Pb/CsI observations and leakage terminology
+teach one concept, then verify it before continuing
 ```
 
 本階段的完成證據：
