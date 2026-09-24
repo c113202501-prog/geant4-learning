@@ -1,4 +1,8 @@
+/tutorial/detector/armAngle 30 deg
+/run/numberOfThreads 1
 /run/initialize
+/tutorial/generator/meanAngle -15 deg
+/tutorial/generator/sigmaAngle 2 deg
 
 ########################################
 #
@@ -9,7 +13,8 @@
 #Create a mesh large as the box
 /score/mesh/boxSize 150. 30. 50. cm
 #Position it over the box
-/score/mesh/translate/xyz 0 0 8 m
+/score/mesh/translate/xyz -4 0 6.928203 m
+/score/mesh/rotate/rotateY -30 deg
 #mesh voxel size of 5cm
 /score/mesh/nBin 30 6 10
 #
@@ -25,11 +30,11 @@
 #
 /score/list
 
-# /vis/disable
-/run/verbose 1
+# Interactive learning run: keep this small so the Qt event loop remains
+# responsive. Large-statistics runs should use a separate batch macro.
+/run/verbose 0
 /gun/particle e-
-/run/beamOn 2000
-/vis/enable
+/run/beamOn 1
 
 # /vis/viewer/panTo -6 3 m
 # /vis/viewer/zoomTo 4
@@ -38,6 +43,7 @@
 #
 # Dump scores to a file
 #
+/score/dumpQuantityToFile boxMesh_1 eDep eDep.txt
 /score/dumpQuantityToFile boxMesh_1 nOfStepGamma nOfStepGamma.txt
 #
 #/control/execute draw.mac

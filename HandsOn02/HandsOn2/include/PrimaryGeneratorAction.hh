@@ -65,6 +65,9 @@ public:
     void SetSigmaAngle(G4double val) { fSigmaAngle = val; }
     G4double GetSigmaAngle() const { return fSigmaAngle; }
 
+    void SetMeanAngle(G4double val) { fMeanAngle = val; }
+    G4double GetMeanAngle() const { return fMeanAngle; }
+
     void SetRandomize(G4bool val) { fRandomizePrimary = val; }
     G4bool GetRandomize() const { return fRandomizePrimary; }
     
@@ -80,6 +83,7 @@ private:
     G4ParticleDefinition* fProton;
     G4double fMomentum;
     G4double fSigmaMomentum;
+    G4double fMeanAngle;
     G4double fSigmaAngle;
     G4bool fRandomizePrimary;
 };

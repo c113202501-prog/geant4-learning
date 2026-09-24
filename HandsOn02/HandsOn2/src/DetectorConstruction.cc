@@ -67,6 +67,7 @@ DetectorConstruction::DetectorConstruction()
 {
     fArmRotation = new G4RotationMatrix();
     fArmRotation->rotateY(fArmAngle);
+    DefineCommands();
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -80,6 +81,42 @@ DetectorConstruction::~DetectorConstruction()
     {
       delete fVisAttributes[i];
     }  
+}
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
+void DetectorConstruction::SetArmAngle(G4double val)
+{
+    fArmAngle = val;
+
+    // Before Construct(), store the requested angle. After Construct(), also
+    // update the existing physical placement so the whole daughter hierarchy
+    // follows the second arm.
+    if (!fSecondArmPhys) return;
+
+    *fArmRotation = G4RotationMatrix();
+    fArmRotation->rotateY(fArmAngle);
+
+    G4double x = -5.*m * std::sin(fArmAngle);
+    G4double z =  5.*m * std::cos(fArmAngle);
+    fSecondArmPhys->SetTranslation(G4ThreeVector(x, 0., z));
+
+    G4RunManager::GetRunManager()->GeometryHasBeenModified();
+}
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
+void DetectorConstruction::DefineCommands()
+{
+    fMessenger =
+      new G4GenericMessenger(this, "/tutorial/detector/", "Detector control");
+
+    auto& armAngleCmd = fMessenger->DeclareMethodWithUnit(
+      "armAngle", "deg", &DetectorConstruction::SetArmAngle,
+      "Set rotation angle of the second arm.");
+    armAngleCmd.SetParameterName("angle", true);
+    armAngleCmd.SetRange("angle>=0. && angle<180.");
+    armAngleCmd.SetDefaultValue("30.");
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -119,6 +156,9 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
       = new G4Box("secondArmBox",2.*m,2.*m,3.5*m);
     G4LogicalVolume* secondArmLogical
       = new G4LogicalVolume(secondArmSolid,air,"secondArmLogical");
+    // Apply an angle that may have been set by a macro before /run/initialize.
+    *fArmRotation = G4RotationMatrix();
+    fArmRotation->rotateY(fArmAngle);
     G4double x = -5.*m * std::sin(fArmAngle);
     G4double z = 5.*m * std::cos(fArmAngle);
     fSecondArmPhys

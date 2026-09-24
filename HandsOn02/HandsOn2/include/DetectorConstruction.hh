@@ -64,8 +64,13 @@ public:
     //This is just a convinience: a method where all materials needed
     //are created
     void ConstructMaterials();
+
+    // Rotate the complete second-arm assembly at runtime.
+    void SetArmAngle(G4double val);
     
 private:
+
+    void DefineCommands();
 
     G4GenericMessenger* fMessenger;
     

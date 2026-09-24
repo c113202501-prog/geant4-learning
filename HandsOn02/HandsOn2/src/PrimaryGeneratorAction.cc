@@ -46,6 +46,7 @@ PrimaryGeneratorAction::PrimaryGeneratorAction()
   fPositron(0), fMuon(0), fPion(0), fKaon(0), fProton(0),
   fMomentum(1000.*MeV),
   fSigmaMomentum(50.*MeV),
+  fMeanAngle(0.*deg),
   fSigmaAngle(2.*deg),
   fRandomizePrimary(false)
 {
@@ -115,7 +116,7 @@ void PrimaryGeneratorAction::GeneratePrimaries(G4Event* event)
     G4double Ekin = std::sqrt(pp*pp+mass*mass)-mass;
     fParticleGun->SetParticleEnergy(Ekin);
     
-    G4double angle = (G4UniformRand()-0.5)*fSigmaAngle;
+    G4double angle = fMeanAngle + (G4UniformRand()-0.5)*fSigmaAngle;
     fParticleGun->SetParticleMomentumDirection(G4ThreeVector(std::sin(angle),0.,
                                                              std::cos(angle)));
     
@@ -150,6 +151,13 @@ void PrimaryGeneratorAction::DefineCommands()
     sigmaMomentumCmd.SetParameterName("sp", true);
     sigmaMomentumCmd.SetRange("sp>=0.");                                
     sigmaMomentumCmd.SetDefaultValue("50.");
+
+    // meanAngle command: central direction of the beam in the x-z plane
+    G4GenericMessenger::Command& meanAngleCmd
+      = fMessenger->DeclarePropertyWithUnit("meanAngle", "rad", fMeanAngle,
+                                    "Mean angle of primaries in the x-z plane.");
+    meanAngleCmd.SetParameterName("a", true);
+    meanAngleCmd.SetDefaultValue("0.");
 
     // sigmaAngle command
     G4GenericMessenger::Command& sigmaAngleCmd

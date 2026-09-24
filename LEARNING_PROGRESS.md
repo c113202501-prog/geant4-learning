@@ -1,12 +1,12 @@
 # Geant4 Learning Progress
 
-最後更新：2026-09-23（Asia/Taipei）
+最後更新：2026-09-24（Asia/Taipei）
 
 ## 目前階段
 
-HandsOn02 / Exercise 3a complete
+HandsOn02 / Exercise 4：Sensitive Detector、Hit 與 Readout
 
-目前狀態：command-based scoring manager 的角色、C++ pointer 與 compile/runtime 分工已確認理解；下一步閱讀 `scoring.mac` 的 mesh 定義。
+目前狀態：Exercise 3 的 command-based scoring、mesh 座標與統計解讀已完成；正在學習 `G4Step → Sensitive Detector → raw hit → readout/digit → observable`。目前程式閱讀與概念建模已完成，尚未把 threshold/digitization 修改實作進 repository。
 
 ## 環境
 
@@ -18,6 +18,8 @@ HandsOn02 / Exercise 3a complete
 - Linux build directory：`/home/sundae/jlab-build/HandsOn01-B1`
 - Linux executable：`/home/sundae/jlab-build/HandsOn01-B1/exampleB1`
 - Qt / WSLg visualization：成功（學習者回報）
+- HandsOn02 current source build：`[100%] Built target G4tut`（2026-09-24，`[CODEX-VERIFIED]`）。
+- `scoring-batch.mac`：完成 1-event configuration run 與後續 199-event statistics run，process exit code 0；產生各 1803 行的 `eDep.txt` 與 `nOfStepGamma.txt`（2026-09-24，`[CODEX-VERIFIED]`）。
 
 ## 已完成
 
@@ -151,6 +153,9 @@ HandsOn02 / Exercise 3a complete
 
 ## Needs Reinforcement
 
+- Exercise 4 的 threshold、能量累積與 vector ntuple 目前是設計練習，尚未修改、build、run，因此不得標記為實作完成。
+- TOF hit association：已理解最早 hit 不保證來自同一 track；下一步要練習使用 detector-level observable 配對，再以 `trackID` truth 評估 purity／efficiency。
+
 - Primary particle settings 與 Physics List 的責任不同：
   - `PrimaryGeneratorAction` 建立 event 的初始粒子、能量、方向與位置。
   - Physics List 提供輸運時可用的物理過程與模型。
@@ -161,7 +166,6 @@ HandsOn02 / Exercise 3a complete
 - step-selection implementation details
 - copy-number usage
 - physics-process competition
-- sensitive detector 與 hit collection
 - `G4Accumulable` 的多執行緒細節
 
 ## 目前學習原則
@@ -170,7 +174,8 @@ HandsOn02 / Exercise 3a complete
 - 理論只補到足以知道目前正在做什麼。
 - 採用 `retrieve → verify → teach → test`。
 - 每個新主題必須先展示真實程式及其上下文，再由 ChatGPT 講解，確認學習者已看過後才能測試或要求填空；不得以未教內容突襲測驗。
-- 新增並嚴格遵守學習者提供的 Geant4 + C++ 教練規則：`定位 → 預測 → 教一個概念 → 小考 → 糾正 → Why → 確認理解`；一次只處理一個必要概念。
+- 新領域採用認知學徒制順序：`Modeling（完整示範與設計理由）→ 低階理解確認 → Coaching／Scaffolding → Articulation → Reflection → Prediction／Exploration`；只有在先備 schema 已建立後才要求無提示預測。
+- 每次作答後必須完成 consolidation：明確對照學習者答案、正確邏輯、差異與原因，不能只回覆對錯。
 - 依 `GEANT4_PHYSICS_KNOWLEDGE_MAP.md`，所有程式教學先定位於完整實驗鏈，並區分 physical process、energy deposit、detector response、scoring/hit 與 reconstructed observable。
 - 區分 physical phenomenon、physical model、Monte Carlo representation、Geant4 implementation、observable。
 - ChatGPT 負責概念鏈、理解檢查、先備需求與 mastery 判斷。

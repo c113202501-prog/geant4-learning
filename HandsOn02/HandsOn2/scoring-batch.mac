@@ -1,0 +1,11 @@
+# Reuse the verified mesh/scorer configuration and its first event.
+/control/execute /mnt/c/Users/User/Documents/Codex/2026-09-16/can/HandsOn02/HandsOn2/scoring.mac
+
+# Start a separate 199-event statistics run without opening the Qt viewer.
+# Geant4 resets mesh quantities at the beginning of each run, so the final
+# files below describe this 199-event run, not the preceding single event.
+/run/beamOn 199
+
+# Overwrite the initial one-event dumps with the 199-event run scores.
+/score/dumpQuantityToFile boxMesh_1 eDep eDep.txt
+/score/dumpQuantityToFile boxMesh_1 nOfStepGamma nOfStepGamma.txt
