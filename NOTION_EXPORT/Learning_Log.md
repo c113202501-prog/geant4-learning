@@ -1,5 +1,7 @@
 # Learning Log
 
+Student-facing summary. The append-only evidence record is `LEARNING_PROGRESS.md` in Git.
+
 ## HandsOn01 / B1 — foundation
 
 - **Implementation:** Linux x86-64 build and event display succeeded.
@@ -25,4 +27,3 @@
 - **Understanding:** SD/raw hit/readout layering, same-strip accumulation, ntuple schema, and truth-vs-reconstruction are `UNDERSTOOD`; purity/efficiency remains `SEEN` pending application.
 
 For full evidence and misconceptions, use canonical Git files `LEARNING_PROGRESS.md` and `notes/HandsOn02-Exercise4-Sensitive-Detector-Hits.md`.
-

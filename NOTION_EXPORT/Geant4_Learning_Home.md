@@ -1,5 +1,7 @@
 # Geant4 Learning Home
 
+Notion is the student-facing projection and owns review scheduling. Git Markdown is canonical for current state, mastery, implementation, and verification.
+
 ## Current Learning State
 
 See `Current_Learning_State.md` and canonical Git file `LEARNING_STATE.md`.
@@ -23,4 +25,3 @@ Do not duplicate environment details in Notion. Use canonical Git files:
 ## Study rule
 
 Program completion is not mastery. Record implementation, verification, and learner understanding separately.
-

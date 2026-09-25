@@ -1,5 +1,7 @@
 # Current Learning State
 
+Student-facing projection only. If this page conflicts with Git, `LEARNING_STATE.md` is canonical. Last projected state content: 2026-09-26.
+
 ## Location / exercise
 
 HandsOn02 / Exercise 4 — Sensitive Detector, Hit, Readout, and TOF matching.
@@ -30,4 +32,3 @@ Monte Carlo truth must remain separate from detector-level reconstruction.
 ## Next single step
 
 Calculate purity and efficiency for 90 reconstructed pairs, 72 correct pairs, and 120 truth-matchable cases; then explain the effect of loosening matching cuts.
-

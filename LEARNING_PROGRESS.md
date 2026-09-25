@@ -1,12 +1,8 @@
 # Geant4 Learning Progress
 
-最後更新：2026-09-25（Asia/Taipei）
+最後更新：2026-09-26（Asia/Taipei）
 
-## 目前階段
-
-HandsOn02 / Exercise 4：Sensitive Detector、Hit 與 Readout
-
-目前狀態：Exercise 3 的 command-based scoring、mesh 座標與統計解讀已完成；正在學習 `G4Step → Sensitive Detector → raw hit → readout/digit → observable`。目前程式閱讀與概念建模已完成，尚未把 threshold/digitization 修改實作進 repository。
+本檔只保存依時間累積的證據與里程碑。即時狀態、待答題與下一步唯一以 `LEARNING_STATE.md` 為準。
 
 ## 環境
 
@@ -176,24 +172,12 @@ HandsOn02 / Exercise 4：Sensitive Detector、Hit 與 Readout
 - physics-process competition
 - `G4Accumulable` 的多執行緒細節
 
-## 目前學習原則
+## 2026-09-26 — Handoff architecture
 
-- 以進入實作為主，不先完整學完 Geant4。
-- 理論只補到足以知道目前正在做什麼。
-- 採用 `retrieve → verify → teach → test`。
-- 每個新主題必須先展示真實程式及其上下文，再由 ChatGPT 講解，確認學習者已看過後才能測試或要求填空；不得以未教內容突襲測驗。
-- 新領域採用認知學徒制順序：`Modeling（完整示範與設計理由）→ 低階理解確認 → Coaching／Scaffolding → Articulation → Reflection → Prediction／Exploration`；只有在先備 schema 已建立後才要求無提示預測。
-- 每次作答後必須完成 consolidation：明確對照學習者答案、正確邏輯、差異與原因，不能只回覆對錯。
-- 依 `GEANT4_PHYSICS_KNOWLEDGE_MAP.md`，所有程式教學先定位於完整實驗鏈，並區分 physical process、energy deposit、detector response、scoring/hit 與 reconstructed observable。
-- 區分 physical phenomenon、physical model、Monte Carlo representation、Geant4 implementation、observable。
-- ChatGPT 負責概念鏈、理解檢查、先備需求與 mastery 判斷。
-- Codex 負責查看程式、修改、build、run、驗證，並更新本檔。
-- 程式成功執行不自動等於概念已理解。
-- 未經學習者自行解釋或轉移應用，不標記為 `UNDERSTOOD`、`INDEPENDENT` 或 `TRANSFERRED`。
-
-## 下一步
-
-先回答 Exercise 4 的 purity／efficiency 應用題並完成 consolidation；之後才決定是否實作簡化的 `fEdep → threshold → vector ntuple` 流程。即時 resume 狀態以 `LEARNING_STATE.md` 為準。
+- 將 `LEARNING_STATE.md` 確立為唯一 current truth；本檔不再維護競爭性的「目前階段／下一步」。
+- 新增 `LEARNER_PROFILE.md` 保存已確認且跨領域穩定的學習偏好。
+- 將 `AGENTS.md` 收斂為 cold-start router、文件權責與同步規則；Geant4 教學程序集中到 `GEANT4_LEARNING_PROTOCOL.md`。
+- 保留 Exercise 4 的原有狀態：purity／efficiency 仍為 `SEEN`，threshold、時間窗、vector output 與 reconstruction matching 仍未實作或驗證。
 
 ## 教材與程式位置
 
@@ -207,8 +191,8 @@ HandsOn02 / Exercise 4：Sensitive Detector、Hit 與 Readout
 ### Notion learning workspace
 
 - Workspace：`https://app.notion.com/p/ad09f5095b9c820f98a9015ad28dd43b`
-- Notion 保存知識地圖、各題筆記、錯題與學習進度；Git 保存程式碼與可驗證證據。
-- 已建立 HandsOn01/B1、HandsOn02 Exercises 1–3、完整知識地圖及錯題整理；Exercise 3 標為進行中。
+- Git Markdown 保存 current state、mastery 與可驗證證據；Notion 是學生閱讀投影並負責複習排程。
+- Notion 若與 Git 的 current state／mastery 衝突，以 Git 為準；複習日期衝突則以 Notion 為準。
 
 ### JLab 課程
 
@@ -250,4 +234,4 @@ HandsOn02 / Exercise 4：Sensitive Detector、Hit 與 Readout
 5. 錯誤分類與修正（若有）。
 6. mastery 狀態：`SEEN / UNDERSTOOD / INDEPENDENT / TRANSFERRED / RETAINED`。
 
-任何助手開始新工作前，先讀本檔；完成可驗證進展後，再更新本檔。
+任何助手依 `AGENTS.md` 進入；只有需要歷史證據或要追加可驗證里程碑時才讀寫本檔。
