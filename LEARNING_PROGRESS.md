@@ -1,6 +1,6 @@
 # Geant4 Learning Progress
 
-最後更新：2026-09-24（Asia/Taipei）
+最後更新：2026-09-25（Asia/Taipei）
 
 ## 目前階段
 
@@ -143,6 +143,14 @@ HandsOn02 / Exercise 4：Sensitive Detector、Hit 與 Readout
   - `3b-2 mesh size`：`UNDERSTOOD`；`boxSize 150 30 50 cm` 為半長，完整尺寸 `300 × 60 × 100 cm`。
   - `3b-3 mesh position`：`UNDERSTOOD`；預設 `fArmAngle=0°` 時，second arm world `z=5 m` 加 absorber local `z=3 m`，得到 world `z=8 m`，與 scoring mesh 對準。
 
+### HandsOn02 / Exercise 4 — 2026-09-24 to 2026-09-25
+
+- **Implementation status:** threshold、時間窗、`fEdep` hit accumulation 與 vector ntuple 尚未寫入 repository。
+- **Verification status:** 已直接閱讀 Geant4 11.4.2 basic/B5 的 `HodoscopeSD`、`HodoscopeHit`、`EventAction` 與 `RunAction`；目前 B5 hit 保存 strip ID、最早時間與繪圖 transform，不保存 `edep`。`[CODEX-VERIFIED]`
+- **Understanding status:** Sensitive Detector → raw hit → readout/digit、同 strip 累積、scalar/vector schema、truth-vs-reconstruction 均為 `UNDERSTOOD`；purity/efficiency 為 `SEEN`，等待應用題。
+- 已能解釋同一 event 可能包含多顆粒子，且兩側 detector 幾何接受度不同，因此兩側最早 hit 不保證屬於同一 track。
+- 已能解釋 `trackID` 是 Monte Carlo truth，只適合作為 reconstruction 的事後驗證，不能當作 detector-level 配對輸入。
+
 ### 環境與執行
 
 - B1 已在 WSL 中以 GNU C++ 13.3、CMake 3.28.3 重新編譯。
@@ -185,24 +193,7 @@ HandsOn02 / Exercise 4：Sensitive Detector、Hit 與 Readout
 
 ## 下一步
 
-下一步閱讀 `scoring.mac`，從 scoring mesh 的物理角色開始：
-
-```text
-locate the mesh in transport → measurement flow
-        ↓
-distinguish scoring mesh from detector geometry
-        ↓
-understand mesh size, position and bins one concept at a time
-        ↓
-connect energy-deposit quantities to physical observables
-```
-
-本階段的完成證據：
-
-1. 學習者能用自己的話說明 primary settings 與 Physics List 的差異。
-2. 學習者能沿 B1 程式指出一個 event 的資料流。
-3. 學習者能區分視覺化軌跡、energy deposit、dose 與實驗偵測器訊號。
-4. 完成下一個實作檢查點，並記錄修改、預測、觀察與解釋。
+先回答 Exercise 4 的 purity／efficiency 應用題並完成 consolidation；之後才決定是否實作簡化的 `fEdep → threshold → vector ntuple` 流程。即時 resume 狀態以 `LEARNING_STATE.md` 為準。
 
 ## 教材與程式位置
 

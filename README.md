@@ -4,10 +4,10 @@ Hands-on learning workspace for Geant4 11.4.x on Windows 11 + WSL2 + Ubuntu 24.0
 
 ## Current stage
 
-`HandsOn02 / Exercise 1a`
+`HandsOn02 / Exercise 4 — Sensitive Detector, Hit, Readout, and TOF matching`
 
-The learning status, verified environment, and next conceptual target are maintained in
-[`LEARNING_PROGRESS.md`](LEARNING_PROGRESS.md).
+Resume from [`LEARNING_STATE.md`](LEARNING_STATE.md). Chronology and evidence are in
+[`LEARNING_PROGRESS.md`](LEARNING_PROGRESS.md); verified commands are in [`ENVIRONMENT.md`](ENVIRONMENT.md).
 
 ## Build B1 in WSL
 
