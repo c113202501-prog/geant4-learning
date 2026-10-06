@@ -1,0 +1,63 @@
+{
+  "checked_date": "2026-10-06",
+  "verification": "All eight downloads complete. Seven checked for PDF header and EOF marker; ePIC checked against official MD5 and byte count. No full visual inspection or scientific content review claimed.",
+  "files": [
+    {
+      "file": "2603.14167.pdf",
+      "url": "https://arxiv.org/pdf/2603.14167v2",
+      "bytes": 2239354,
+      "sha256": "A5E84D693C2C4AE3D53835F0D2866FE58BA418095ECB4C7917B0E22799826C61",
+      "status": "downloaded; PDF header and EOF marker verified"
+    },
+    {
+      "file": "2512.20852.pdf",
+      "url": "https://arxiv.org/pdf/2512.20852v4",
+      "bytes": 23538316,
+      "sha256": "7DFAB9F37A1F59F0F657AEE31FDB0CFC571DE4B72CDCD66AD55DACACDBBE49AE",
+      "status": "downloaded; PDF header and EOF marker verified"
+    },
+    {
+      "file": "2103.05419.pdf",
+      "url": "https://arxiv.org/pdf/2103.05419",
+      "bytes": 123546852,
+      "sha256": "C00A937277CEA263B97CE8815533FF489345BC05DBB9B25AF359443BA4105709",
+      "status": "downloaded; PDF header and EOF marker verified"
+    },
+    {
+      "file": "Fabjan-Gianotti-2003.pdf",
+      "url": "https://research.kek.jp/people/koma/work/work_kaon/e391/seminar/pdf/RMPv75p1287.pdf",
+      "bytes": 2116766,
+      "sha256": "623B185D61CDFEEFA068FB55BCE6FA3AC0F1568B54EA358914F62E8C6FE833F0",
+      "status": "downloaded; PDF header and EOF marker verified"
+    },
+    {
+      "file": "PDG-2025-passage-particles-matter.pdf",
+      "url": "https://pdg.lbl.gov/2025/reviews/rpp2025-rev-passage-particles-matter.pdf",
+      "bytes": 3227600,
+      "sha256": "73044484AFA0E9B6560E60EBBE9166FB1E61A13F8D1A004D3C87C11CB60B94B1",
+      "status": "downloaded; PDF header and EOF marker verified"
+    },
+    {
+      "file": "Geant4-ApplicationDeveloperGuide.pdf",
+      "url": "https://geant4.web.cern.ch/documentation/dev/bfad_pdf/BookForApplicationDevelopers.pdf",
+      "bytes": 4796287,
+      "sha256": "E7F8A35266D63F3830CB0DDD70384215D43B00F4387001D07BE0AD0A94EF774C",
+      "status": "downloaded; PDF header and EOF marker verified"
+    },
+    {
+      "file": "Geant4-PhysicsReferenceManual.pdf",
+      "url": "https://geant4.web.cern.ch/documentation/dev/prm_pdf/PhysicsReferenceManual.pdf",
+      "bytes": 19371422,
+      "sha256": "2E5E501EFE42DA2E83AE4D38DDEC5D57686F113002C7EF16FEAFF10D5EF86D50",
+      "status": "downloaded; PDF header and EOF marker verified"
+    },
+    {
+      "file": "ePIC-preTDR-3.1.pdf",
+      "url": "https://zenodo.org/records/19496158/files/ePIC_Preliminary_Design_Report_3.1-line-numbering.pdf?download=1",
+      "bytes": 260599821,
+      "sha256": "EEA4BAE1C9C23D80A582789EB5FB433CD2BD8F8E9AB37029B6CD953F2C385FD1",
+      "md5": "1c9990d35ed3176a01b6c7989cf6bbb0",
+      "status": "downloaded; official Zenodo MD5 and byte count match"
+    }
+  ]
+}

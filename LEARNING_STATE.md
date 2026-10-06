@@ -5,14 +5,23 @@ This is the sole canonical snapshot of the learner's current position. Historica
 ```yaml
 last_updated: 2026-10-06
 current_exercise: HandsOn03 / hodoscope Sensitive Detector implementation — learning checkpoint Exercise 4
-current_concept: Separate verified raw HodoscopeHit data from the next readout-level threshold decision
+current_concept: Define the boundary rule for an illustrative event-integrated readout energy threshold
 pending_question: >-
-  No detector threshold has been verified; decide whether the next step uses an explicitly labelled teaching value or waits for a real specification.
+  If a strip has exactly 0.20 MeV accumulated edep, should it pass the illustrative threshold?
+  The learner has not yet chosen > versus >=.
 next_step: >-
-  Explain where threshold belongs relative to raw-hit accumulation, then choose a non-deceptive parameter source
-  before implementing any readout filtering.
+  Resume with the unanswered > versus >= boundary question. Once the learner chooses the convention,
+  show the actual EventAction source and plan a separate event-integrated readout selection while retaining raw hits.
+  The tutor proposed 0.20 MeV as an EXAMPLE teaching value, not a verified detector specification;
+  no readout code has been changed and no finite integration-window model is implied.
 active_misconception: []
 relevant_mastery:
+  - concept: preserve raw hits while selecting readout data
+    level: UNDERSTOOD
+    evidence: learner explained that 0.24 and 0.08 MeV give two raw hits but one readout at a 0.20 MeV teaching threshold; the rejected raw hit remains
+  - concept: time information lost by event-level compression
+    level: UNDERSTOOD
+    evidence: learner explained that total edep and earliest time cannot recover window energies; per-step timestamps paired with edep or time bins are needed
   - concept: step / track / particle distinction
     level: UNDERSTOOD
     evidence: learner explained why nOfStepGamma counts steps rather than gamma particles
@@ -47,6 +56,8 @@ verification_status:
   - verify-hits.mac processed one event and directly observed H1 strip 7 at 6.896 ns with 3.031 MeV and H2 strip 9 at 60.111 ns with 2.779 MeV.
 current_note: notes/HandsOn02-Exercise4-Sensitive-Detector-Hits.md
 do_not_skip:
+  - Resume the pending boundary question; do not repeat the already answered raw/readout-count or time-information questions.
+  - Use existing general knowledge efficiently; inspect only relevant reference pages for exact source claims and OCR only needed unreadable pages.
   - Use the actual repository code before claiming current behavior.
   - Keep truth, raw hits, digits/readout, and reconstructed observables distinct.
   - Do not infer INDEPENDENT or TRANSFERRED mastery from scaffolded answers.

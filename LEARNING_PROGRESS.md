@@ -257,3 +257,13 @@
 6. mastery 狀態：`SEEN / UNDERSTOOD / INDEPENDENT / TRANSFERRED / RETAINED`。
 
 任何助手依 `AGENTS.md` 進入；只有需要歷史證據或要追加可驗證里程碑時才讀寫本檔。
+
+## 2026-10-06 — Readout threshold and time-information checkpoint
+
+- Learner explained: 0.24 and 0.08 MeV at an EXAMPLE 0.20 MeV threshold produce two raw hits and one readout; the rejected strip remains in the raw collection.
+- Learner explained: event total edep plus earliest time cannot recover time-window energy; per-step timestamps paired with edep, or time bins, are needed.
+- Both answers support UNDERSTOOD only. No new implementation, build, run, INDEPENDENT or TRANSFERRED evidence was produced.
+- Tutor proposed an event-integrated 0.20 MeV teaching threshold. Pending learner choice: should exactly 0.20 MeV pass (> versus >=)? No verified detector threshold or finite electronics window exists.
+- Added REFERENCES.md and token-efficient reference routing. Eight public PDFs downloaded locally; manifest records sources and verification. ePIC preTDR 3.1 line-numbered file matches the official Zenodo MD5. Book PDFs remain local and are not part of this Git backup.
+- Checked learner-provided Leo PDF (Second Revised Edition) and Livan & Wigmans 2019 introductory book for usable text layers. The 2019 book is distinct from the Oxford 2017 Wigmans monograph; the previously provided Vogel EPUB was a book review.
+- Added GPT_HANDOFF_PROMPT.md with public retrieval links, a fallback snapshot and the exact unanswered question. Current state remains canonical in LEARNING_STATE.md.

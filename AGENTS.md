@@ -70,3 +70,9 @@ Use `sync_queue` in `LEARNING_STATE.md` only for concrete projections still owed
 - Never use macOS ARM64 executables in WSL x86_64.
 - Prefer targeted `rg`, `git status`, and `git diff`.
 - For verified paths and setup, read `ENVIRONMENT.md`; do not duplicate them here.
+
+## Reference routing
+
+Before teaching a new concept, consult `REFERENCES.md`; read only matching sections and check prerequisites against `LEARNING_STATE.md`. Use at most two sources per session, one relevant point each, and explain why each is relevant. Model unfamiliar prerequisites before a prediction; then use the source to verify or extend the learner's reasoning. Cite the source, version and actual section in your own words. Queue a source in the next step if its prerequisites are missing. For uncertain current design versions, state the uncertainty and obtain learner confirmation before treating the document as the current specification. Download records belong in `notes/refs/download-manifest.json`, not in mastery state.
+
+For token-efficient tutoring, use established general knowledge directly; inspect indexed source pages only for exact citations, limits, or source-specific facts. Do not OCR entire books; check text layers first and OCR only the needed unreadable pages. Do not imply access to a complete internal book database.

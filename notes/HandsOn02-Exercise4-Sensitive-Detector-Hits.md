@@ -106,17 +106,18 @@ efficiency = truth-confirmed reconstructed matches / all truth matchable cases
 - raw-hit `fEdep` accumulation：`IMPLEMENTED / BUILT / NUMERICALLY VERIFIED`
 - `G4HCofThisEvent → HodoscopeHitsCollection → Print()`：`IMPLEMENTED / NUMERICALLY VERIFIED`
 - threshold/digitization 程式修改：`NOT IMPLEMENTED`
-- TOF matching purity/efficiency：`SEEN`，等待計算與遷移練習
+- TOF matching purity/efficiency：`UNDERSTOOD`（既有 LEARNING_STATE 記錄已支持計算與分母解釋）；未據此宣稱遷移掌握。
 
 ## 下一步
 
-先完成 purity／efficiency 練習，再決定是否實作簡化版：
+目前下一步以 LEARNING_STATE.md 為準。raw-hit 能量累積與 collection 列印已完成；threshold、有限時間窗與 vector 輸出尚未實作。
 
-1. 在 `HodoscopeHit` 增加 `fEdep`、`AddEdep()`、`GetEdep()`。
-2. 在 `ProcessHits()` 依 strip 累積能量並保留最早時間。
-3. 在 event/readout 層套 threshold。
-4. 將通過 threshold 的 strip ID、時間與能量輸出成對應 vectors。
-5. build/run，核對 raw hit 數、readout hit 數與 ntuple 內容。
+## 2026-10-06：readout 分層與資訊壓縮的理解證據
+
+- 教學例：同 event 的 strip 7 為 0.24 MeV、strip 8 為 0.08 MeV，門檻假設 0.20 MeV。學習者回答 raw collection 保留兩筆、readout 一筆，並解釋 strip 8 只在 readout 被篩掉，raw hit 不刪除。
+- 時間窗例：10 ns、100 ns 各沉積 0.12 MeV；event 累積為 0.24 MeV，但假設固定 20 ns 窗，各窗僅 0.12 MeV。學習者正確解釋總能量與最早時間無法還原能量的時間分布，缺少逐 step 的 (time, edep) 對應資訊。
+- 以上支持 UNDERSTOOD，不支持 INDEPENDENT／TRANSFERRED，也不是新增程式驗證。
+- 導師提出先做整個 event 的能量門檻，0.20 MeV 明確為 EXAMPLE。尚待學習者回答恰好 0.20 MeV 時採 > 還是 >=；尚未改碼。
 
 ## 一句話總結
 

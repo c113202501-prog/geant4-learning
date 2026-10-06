@@ -2,6 +2,15 @@
 /work/
 /outputs/
 
+# Downloaded reference binaries stay local; indexes and manifests are versioned
+/notes/refs/*.pdf
+/notes/refs/*.epub
+/notes/refs/*.bin
+/notes/refs/*.jpg
+/notes/refs/*.png
+/notes/refs/epic-record.json
+/notes/refs/epic-latest.json
+
 # Build products
 /build/
 /cmake-build-*/
