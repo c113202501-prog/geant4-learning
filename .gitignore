@@ -15,6 +15,7 @@ Makefile
 *.out
 !HandsOn01/B1/exampleB1.out
 !HandsOn02/HandsOn2/tutorial.out
+!HandsOn03/HandsOn3/tutorial.out
 *.o
 *.obj
 *.so

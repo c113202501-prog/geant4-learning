@@ -179,6 +179,13 @@
 - 將 `AGENTS.md` 收斂為 cold-start router、文件權責與同步規則；Geant4 教學程序集中到 `GEANT4_LEARNING_PROTOCOL.md`。
 - 保留 Exercise 4 的原有狀態：purity／efficiency 仍為 `SEEN`，threshold、時間窗、vector output 與 reconstruction matching 仍未實作或驗證。
 
+## 2026-10-06 — HandsOn03 baseline import
+
+- 將課程的 `HandsOn03/HandsOn3-problem` 非破壞性複製為 Git 內的 `HandsOn03/HandsOn3`；原始下載資料未刪除或移動。
+- 只納入 source、headers、CMake、README 與 macros；排除既有 `CMakeFiles`、cache、Makefile、binary 與 runtime output。
+- purity／efficiency 與 matching-cut trade-off 已由學習者正確解釋，提升為 `UNDERSTOOD`。
+- 同 strip 的 non-zero `edep` 累積與最早有效 hit time 已達 `UNDERSTOOD`；程式尚未修改、build 或 run。
+
 ## 教材與程式位置
 
 ### Git repository
