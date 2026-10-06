@@ -50,6 +50,7 @@ set(_SCRIPTS
   init.mac 
   init_vis.mac 
   run1.mac 
+  verify-hits.mac
   vis.mac
   )
 
@@ -72,4 +73,3 @@ add_custom_target(Tutorial DEPENDS G4tut)
 #
 install(TARGETS G4tut DESTINATION bin)
 install(FILES ${_SCRIPTS} DESTINATION share/G4tut)
-

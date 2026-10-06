@@ -74,12 +74,16 @@ void EventAction::EndOfEventAction(const G4Event* event)
     // =============================================
     // Exercise 3
     // Print on screen the hits of the hodoscope
-    // Step 1: Get the hits collection of this event
+    // Step 1: Get the hits collection container of this event.
+    G4HCofThisEvent* hce = event->GetHCofThisEvent();
+    if (!hce) return;
 
-    
     // Step 2: Using the memorised IDs get the collections
     // corresponding to the two hodoscopes
-    // Get hits collections 
+    HodoscopeHitsCollection* hHC1 =
+      static_cast<HodoscopeHitsCollection*>(hce->GetHC(fHHC1ID));
+    HodoscopeHitsCollection* hHC2 =
+      static_cast<HodoscopeHitsCollection*>(hce->GetHC(fHHC2ID));
     
     //
     // Print diagnostics
@@ -94,7 +98,20 @@ void EventAction::EndOfEventAction(const G4Event* event)
            << primary->GetG4code()->GetParticleName()
            << " " << primary->GetMomentum() << G4endl;
     
-    // Step 3: Loop on the two collections and dump on screen hits    
+    // Step 3: Loop on the two collections and dump on screen hits.
+    if (hHC1) {
+      G4cout << " Hodoscope 1 hits: " << hHC1->entries() << G4endl;
+      for (size_t i = 0; i < hHC1->entries(); ++i) {
+        (*hHC1)[i]->Print();
+      }
+    }
+
+    if (hHC2) {
+      G4cout << " Hodoscope 2 hits: " << hHC2->entries() << G4endl;
+      for (size_t i = 0; i < hHC2->entries(); ++i) {
+        (*hHC2)[i]->Print();
+      }
+    }
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

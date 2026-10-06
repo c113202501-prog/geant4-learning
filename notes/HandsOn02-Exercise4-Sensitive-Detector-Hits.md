@@ -103,7 +103,8 @@ efficiency = truth-confirmed reconstructed matches / all truth matchable cases
 - 同 strip 累積 `edep` 與最早時間的程式邏輯：`UNDERSTOOD`（引導填空完成）
 - ntuple scalar/vector 與跨欄位一對一關係：`UNDERSTOOD`
 - `trackID` truth 不可作為 detector reconstruction 輸入：`UNDERSTOOD`
-- raw-hit `fEdep` accumulation：`IMPLEMENTED / BUILT / RUNTIME SMOKE-TESTED`，數值輸出尚待驗證
+- raw-hit `fEdep` accumulation：`IMPLEMENTED / BUILT / NUMERICALLY VERIFIED`
+- `G4HCofThisEvent → HodoscopeHitsCollection → Print()`：`IMPLEMENTED / NUMERICALLY VERIFIED`
 - threshold/digitization 程式修改：`NOT IMPLEMENTED`
 - TOF matching purity/efficiency：`SEEN`，等待計算與遷移練習
 

@@ -194,6 +194,13 @@
 - WSL external build `/home/sundae/jlab-build/HandsOn03-hodoscope` 成功，`run1.mac` 完成 100 events。
 - 目前只驗證 compile 與 runtime；`EventAction` 尚未輸出 hits collection，因此累積數值仍待直接驗證。
 
+## 2026-10-06 — Raw-hit collection output verified
+
+- `EventAction` 現在由 `G4HCofThisEvent` 依 collection ID 取回兩個 `HodoscopeHitsCollection`，並逐筆呼叫 `Print()`。
+- 新增 `verify-hits.mac`，只執行一個 event，避免多執行緒輸出淹沒驗證重點。
+- 直接觀察 Hodoscope 1 strip 7：最早有效時間 `6.896 ns`、累積 `fEdep = 3.031 MeV`；Hodoscope 2 strip 9：`60.111 ns`、`2.779 MeV`。
+- raw-hit data path 已完成數值驗證；threshold/readout filtering 仍未實作。
+
 ## 教材與程式位置
 
 ### Git repository
