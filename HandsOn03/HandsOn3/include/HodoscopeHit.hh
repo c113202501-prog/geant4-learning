@@ -66,8 +66,8 @@ class HodoscopeHit : public G4VHit{
         HodoscopeHit(G4int i,G4double t) ;       // Constructor with parameters
         virtual ~HodoscopeHit() {}
 
-        inline void *operator new(size_t) ;         // Operator new using an allocator
-        inline void operator delete(void*aHit);     // Operator delete using an allocator
+        inline void *operator new(size_t) ;         // Operator new using an allocator
+        inline void operator delete(void*aHit);     // Operator delete using an allocator
 
         void Print();
 
@@ -76,9 +76,13 @@ class HodoscopeHit : public G4VHit{
         void SetTime(G4double val) { fTime = val; }
         G4double GetTime() const { return fTime; }
 
+        void AddEdep(G4double val) { fEdep += val; }
+        G4double GetEdep() const { return fEdep; }
+
     private:
         G4int fId;
         G4double fTime;
+        G4double fEdep;
 };
 
 typedef G4THitsCollection<HodoscopeHit> HodoscopeHitsCollection;
@@ -87,14 +91,14 @@ extern G4ThreadLocal G4Allocator<HodoscopeHit>* HodoscopeHitAllocator;
 
 inline void* HodoscopeHit::operator new(size_t)
 {
-  if (!HodoscopeHitAllocator)
-   HodoscopeHitAllocator = new G4Allocator<HodoscopeHit>;
-  return (void*)HodoscopeHitAllocator->MallocSingle();
+  if (!HodoscopeHitAllocator)
+   HodoscopeHitAllocator = new G4Allocator<HodoscopeHit>;
+  return (void*)HodoscopeHitAllocator->MallocSingle();
 }
 
 inline void HodoscopeHit::operator delete(void*aHit)
 {
-  HodoscopeHitAllocator->FreeSingle((HodoscopeHit*) aHit);
+  HodoscopeHitAllocator->FreeSingle((HodoscopeHit*) aHit);
 }
 
 

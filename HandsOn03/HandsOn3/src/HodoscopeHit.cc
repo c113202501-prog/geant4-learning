@@ -46,12 +46,14 @@
 G4ThreadLocal G4Allocator<HodoscopeHit>* HodoscopeHitAllocator = nullptr;
 
 HodoscopeHit::HodoscopeHit(G4int i,G4double t)
-: G4VHit(), fId(i), fTime(t)
+: G4VHit(), fId(i), fTime(t), fEdep(0.)
 {}
 
 void HodoscopeHit::Print()
 {
-  G4cout << " Hodoscope[" << fId << "] " << fTime/ns << " (nsec)" << G4endl;
+  G4cout << " Hodoscope[" << fId << "] "
+         << fTime/ns << " (nsec), "
+         << fEdep/MeV << " (MeV)" << G4endl;
 }
 
 

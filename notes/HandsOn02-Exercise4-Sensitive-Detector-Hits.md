@@ -15,12 +15,12 @@ G4Step
 
 ## Repository evidence
 
-目前閱讀的是 Geant4 11.4.2 basic/B5 的實際程式：
+目前實作來源已納入 repository：`HandsOn03/HandsOn3`，改編自 Geant4 basic/B5。
 
 - `HodoscopeSD::Initialize()`：每個 event 建立新的 hits collection，加入 `G4HCofThisEvent`。
 - `HodoscopeSD::ProcessHits()`：讀取 step 的 `edep`、copy number 與 global time。
 - 同一 event、同一 strip 只建立一筆 `HodoscopeHit`；後續 steps 只更新最早時間。
-- 現有 `HodoscopeHit` 保存 strip ID、最早時間、logical volume 與繪圖 transform，沒有保存 `edep`。
+- `HodoscopeHit` 現已保存 strip ID、最早有效時間與累積 `edep`。
 - `EventAction` 從 `G4HCofThisEvent` 取回 collections；B5 的 `Time1`、`Time2` 是 scalar ntuple columns。
 
 ## 已確認理解
@@ -103,6 +103,7 @@ efficiency = truth-confirmed reconstructed matches / all truth matchable cases
 - 同 strip 累積 `edep` 與最早時間的程式邏輯：`UNDERSTOOD`（引導填空完成）
 - ntuple scalar/vector 與跨欄位一對一關係：`UNDERSTOOD`
 - `trackID` truth 不可作為 detector reconstruction 輸入：`UNDERSTOOD`
+- raw-hit `fEdep` accumulation：`IMPLEMENTED / BUILT / RUNTIME SMOKE-TESTED`，數值輸出尚待驗證
 - threshold/digitization 程式修改：`NOT IMPLEMENTED`
 - TOF matching purity/efficiency：`SEEN`，等待計算與遷移練習
 

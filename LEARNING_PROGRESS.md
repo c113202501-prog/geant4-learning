@@ -186,6 +186,14 @@
 - purity／efficiency 與 matching-cut trade-off 已由學習者正確解釋，提升為 `UNDERSTOOD`。
 - 同 strip 的 non-zero `edep` 累積與最早有效 hit time 已達 `UNDERSTOOD`；程式尚未修改、build 或 run。
 
+## 2026-10-06 — Raw hodoscope energy accumulation
+
+- `HodoscopeHit` 新增 `fEdep`、`AddEdep()` 與 `GetEdep()`；constructor 將能量初始化為零。
+- `HodoscopeSD::ProcessHits()` 在新 hit 與既有 hit 兩條路徑都累加 non-zero `edep`，並維持最早有效時間。
+- 課程原始碼中的非法 `U+2003` 縮排已在四個受影響程式檔正規化為一般空白；未改變物理邏輯。
+- WSL external build `/home/sundae/jlab-build/HandsOn03-hodoscope` 成功，`run1.mac` 完成 100 events。
+- 目前只驗證 compile 與 runtime；`EventAction` 尚未輸出 hits collection，因此累積數值仍待直接驗證。
+
 ## 教材與程式位置
 
 ### Git repository

@@ -40,6 +40,23 @@ cd /home/sundae/jlab-build/HandsOn02-baseline
 ./G4tut /mnt/c/Users/User/Documents/Codex/2026-09-16/can/HandsOn02/HandsOn2/scoring-batch.mac
 ```
 
+### HandsOn03
+
+- `[VERIFIED]` Repository source: `/mnt/c/Users/User/Documents/Codex/2026-09-16/can/HandsOn03/HandsOn3`.
+- `[VERIFIED]` Build directory: `/home/sundae/jlab-build/HandsOn03-hodoscope`.
+- `[VERIFIED]` Executable: `/home/sundae/jlab-build/HandsOn03-hodoscope/G4tut`.
+- `[VERIFIED]` 2026-10-06 configure/build succeeded; `run1.mac` processed 100 events successfully.
+
+```bash
+source /home/sundae/geant4/install/bin/geant4.sh
+cmake -S /mnt/c/Users/User/Documents/Codex/2026-09-16/can/HandsOn03/HandsOn3 \
+  -B /home/sundae/jlab-build/HandsOn03-hodoscope \
+  -DCMAKE_BUILD_TYPE=Debug
+cmake --build /home/sundae/jlab-build/HandsOn03-hodoscope -j2
+cd /home/sundae/jlab-build/HandsOn03-hodoscope
+./G4tut run1.mac
+```
+
 ## Course and references
 
 - `[VERIFIED]` Course root: `C:\Users\User\Downloads\JLab_Geant4School2025\JLab_Geant4School2025`.
@@ -49,4 +66,3 @@ cd /home/sundae/jlab-build/HandsOn02-baseline
 - `[VERIFIED]` 許淑艷: `C:\Users\User\Downloads\蒙特卡罗方法在实验核物理中的应用 (许淑艳编著, 许淑艳编著, 许淑艳) (z-library.sk, 1lib.sk, z-lib.sk).pdf`.
 
 Do not execute downloaded macOS ARM64 binaries in WSL.
-

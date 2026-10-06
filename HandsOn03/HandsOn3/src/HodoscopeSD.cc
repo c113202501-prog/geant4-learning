@@ -96,22 +96,24 @@ G4bool HodoscopeSD::ProcessHits(G4Step* step, G4TouchableHistory*)
     G4int ix = -1;
     for (size_t i=0;i<fHitsCollection->entries();i++)
     {
-      if ((*fHitsCollection)[i]->GetID()==copyNo)
-      {
-        ix = i;
-        break;
-      }
+      if ((*fHitsCollection)[i]->GetID()==copyNo)
+      {
+        ix = i;
+        break;
+      }
     }
 
     if (ix>=0) // if it has, then take the earlier time
     {
-      if ((*fHitsCollection)[ix]->GetTime()>hitTime)
-      { (*fHitsCollection)[ix]->SetTime(hitTime); }
+      (*fHitsCollection)[ix]->AddEdep(edep);
+      if ((*fHitsCollection)[ix]->GetTime()>hitTime)
+      { (*fHitsCollection)[ix]->SetTime(hitTime); }
     }
     else // if not, create a new hit and set it to the collection
     {
-      HodoscopeHit* hit = new HodoscopeHit(copyNo,hitTime);
-      fHitsCollection->insert(hit);
+      HodoscopeHit* hit = new HodoscopeHit(copyNo,hitTime);
+      hit->AddEdep(edep);
+      fHitsCollection->insert(hit);
     }
     
     return true;

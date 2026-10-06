@@ -361,16 +361,16 @@ void DetectorConstruction::ConstructSDandField()
     //   with names /hodoscope{1,2}.
 
     // sensitive detectors -----------------------------------------------------
-    G4SDManager* SDman = G4SDManager::GetSDMpointer();
-    G4String SDname;
-   
-    G4VSensitiveDetector* hodoscope1 = new HodoscopeSD(SDname="/hodoscope1");
-    SDman->AddNewDetector(hodoscope1);
-    fHodoscope1Logical->SetSensitiveDetector(hodoscope1);
+    G4SDManager* SDman = G4SDManager::GetSDMpointer();
+    G4String SDname;
 
-    G4VSensitiveDetector* hodoscope2 = new HodoscopeSD(SDname="/hodoscope2");
-    SDman->AddNewDetector(hodoscope2);
-    fHodoscope2Logical->SetSensitiveDetector(hodoscope2);
+    G4VSensitiveDetector* hodoscope1 = new HodoscopeSD(SDname="/hodoscope1");
+    SDman->AddNewDetector(hodoscope1);
+    fHodoscope1Logical->SetSensitiveDetector(hodoscope1);
+
+    G4VSensitiveDetector* hodoscope2 = new HodoscopeSD(SDname="/hodoscope2");
+    SDman->AddNewDetector(hodoscope2);
+    fHodoscope2Logical->SetSensitiveDetector(hodoscope2);
        
     // magnetic field ----------------------------------------------------------
     fMagneticField = new MagneticField();
