@@ -267,3 +267,14 @@
 - Added REFERENCES.md and token-efficient reference routing. Eight public PDFs downloaded locally; manifest records sources and verification. ePIC preTDR 3.1 line-numbered file matches the official Zenodo MD5. Book PDFs remain local and are not part of this Git backup.
 - Checked learner-provided Leo PDF (Second Revised Edition) and Livan & Wigmans 2019 introductory book for usable text layers. The 2019 book is distinct from the Oxford 2017 Wigmans monograph; the previously provided Vogel EPUB was a book review.
 - Added GPT_HANDOFF_PROMPT.md with public retrieval links, a fallback snapshot and the exact unanswered question. Current state remains canonical in LEARNING_STATE.md.
+
+
+## 2026-10-07 — Event-integrated readout threshold boundary confirmed
+
+- Learner chose the inclusive EXAMPLE rule: a strip passes readout when accumulated event-integrated edep is `>= 0.20 MeV`.
+- `0.20 MeV` remains a tutor-proposed teaching value, not a verified detector/electronics specification.
+- Using the actual HandsOn03 `EventAction.cc`, `HodoscopeSD.cc`, and `HodoscopeHit.hh`, the tutor separated the existing raw-hit data path from the planned readout selection layer.
+- Learner initially treated the final step deposit `0.09 MeV` as the strip total for steps `0.07 + 0.05 + 0.09 MeV`; after diagnosis, learner correctly applied per-strip accumulation.
+- Reinforcement evidence: learner independently computed `0.04 + 0.06 + 0.10 = 0.20 MeV` and correctly concluded it passes under `>=`; learner also correctly predicted that only the `0.20` and `0.28 MeV` raw hits would pass among `0.13, 0.20, 0.28 MeV`.
+- Mastery for event-integrated accumulated-edep threshold selection: `UNDERSTOOD`, not `INDEPENDENT` or `TRANSFERRED`.
+- No threshold/readout code was added; no new build or run was performed. Raw hits remain unchanged in concept; readout selection is planned as a separate `EventAction`-level step.
