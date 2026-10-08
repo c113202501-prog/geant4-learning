@@ -80,13 +80,8 @@ Before teaching a new concept, consult `REFERENCES.md`; read only matching secti
 
 For token-efficient tutoring, use established general knowledge directly; inspect indexed source pages only for exact citations, limits, or source-specific facts. Do not OCR entire books; check text layers first and OCR only the needed unreadable pages. Do not imply access to a complete internal book database.
 
-## 2026-10-08 explicit learner override
+## Latest scope (2026-10-08)
 
-Current goal is learning the complete analysis/error-source framework, not running simulations. Do not prepare environments, add events or scan parameters automatically. Source edits still require “你來改”; explicit documentation requests authorize documentation.
+Learner explicitly wants the complete Geant4/ePIC ZDC analysis and error-source framework, using case-based learning rather than finishing a book or HandsOn04 numbering. No simulation campaign or environment preparation is requested. Source changes require “你來改”; documentation work was explicitly requested.
 
-For every new topic ask the learner's own understanding first; if clear skip lecture and use an application/judgment case. Teach one concept: purpose → learner-computed small example → sourced formula → applicability plus failure counterexample → learner three-sentence checkpoint → exercise. At checkpoints identify only actual gaps/consequences, not a complete answer template. Feedback: correct portion, real gap/consequence, one follow-up. No invented gaps.
-
-Default difficulty 剛好; two consecutive unaided correct answers require a different context/condition, not just new numbers. At most one retrieval question per concept then a judgment case with a trap. Hints, binary choices, supplied calculations and software success are not independent mastery evidence. If two explanation rounds produce no new executable prediction/code/checkable graph, suggest returning to a small practical task; this does not authorize a simulation campaign.
-
-GitHub LEARNING_LOG.md is for Codex/GPT; LEARNING_STATE.md is the only current snapshot; Notion is a student-readable projection. Preserve historical evidence but do not resume old H1 sums or standard-deviation drills. User's latest instructions supersede older conflicting workflow text below.
-
+Follow the dated learner override in GEANT4_LEARNING_PROTOCOL.md for teaching and difficulty. Stable preferences live in LEARNER_PROFILE.md. GitHub LEARNING_LOG.md serves Codex/GPT; LEARNING_STATE.md holds the only current/pending step. Notion is student-readable concepts/examples/review. Do not duplicate tutor directives or current-state tracking there. Historical Notion log is archived in notes/archive/Notion-Learning-Log-2026-10-08.md.
