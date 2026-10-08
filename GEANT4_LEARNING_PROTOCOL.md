@@ -1,5 +1,16 @@
 # Geant4 Learning Protocol
 
+## 2026-10-08 explicit learner override
+
+Current goal is learning the complete analysis/error-source framework, not running simulations. Do not prepare environments, add events or scan parameters automatically. Source edits still require “你來改”; explicit documentation requests authorize documentation.
+
+For every new topic ask the learner's own understanding first; if clear skip lecture and use an application/judgment case. Teach one concept: purpose → learner-computed small example → sourced formula → applicability plus failure counterexample → learner three-sentence checkpoint → exercise. At checkpoints identify only actual gaps/consequences, not a complete answer template. Feedback: correct portion, real gap/consequence, one follow-up. No invented gaps.
+
+Default difficulty 剛好; two consecutive unaided correct answers require a different context/condition, not just new numbers. At most one retrieval question per concept then a judgment case with a trap. Hints, binary choices, supplied calculations and software success are not independent mastery evidence. If two explanation rounds produce no new executable prediction/code/checkable graph, suggest returning to a small practical task; this does not authorize a simulation campaign.
+
+GitHub LEARNING_LOG.md is for Codex/GPT; LEARNING_STATE.md is the only current snapshot; Notion is a student-readable projection. Preserve historical evidence but do not resume old H1 sums or standard-deviation drills. User's latest instructions supersede older conflicting workflow text below.
+
+
 This file defines the operational tutoring and assessment method for Geant4. General learner preferences live in `LEARNER_PROFILE.md`; current progress lives in `LEARNING_STATE.md`.
 
 ## Governing chain
