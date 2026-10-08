@@ -53,6 +53,8 @@ Evaluator: Codex. Date: 2026-10-08. No new formal mastery level assigned; no del
 | E10 | Validation | 「用未參與校正的獨立測試資料，檢查校正後的能量是否接近真實入射能量。」 | Initial understanding after reliability limitation named; listed bias/linearity/resolution/position/angle/species, no answer template |
 | E11 | Electron versus hadron response | 「電子與強子 shower 的『可見能量比例』不一樣」；「強子 shower 分電磁跟強子成分」；「核反應要花能量打斷核束縛」 | Own initial explanation; tutor clarified neutron response depends on material/integration time; no claim every neutron is invisible |
 | E12 | Mean calibration versus fluctuations | 「甲的讀數…9 GeV」；「乙…6 GeV」；「甲…12 GeV」「乙…8 GeV」；「平均能量校正可以消除平均偏差，但無法消除事件間組成波動造成的解析度損失。」 | Learner calculated without answer hint; supplied teaching model/numbers, not independently established physical coefficients |
+| E13 | Simplified response checkpoint | 「f_em 是一個強子 shower 中…電磁成分…能量占入射能量的比例」；「可見比例…也會隨 event 與能量變動」；「模型沒有考慮泄漏、取樣漲落、光收集與雜訊」 | After formula/example teaching; checkpoint passed, no independent mastery upgrade. Learner's .30/.60 are not this exercise's .8/.2/.5; mismatch explicitly flagged |
+| E14 | Software compensation | 「用局部訊號密度當 f_em 的代理量，逐 event 調整權重」；「可以套用不同的校正係數，而不是共用一個」 | Own understanding elicited, no answer template; tutor clarified local-cell weighting can be direct without explicit event f_em estimate |
 
 ### Small cases and interpretation boundaries
 
@@ -81,7 +83,7 @@ Evaluator: Codex. Date: 2026-10-08. No new formal mastery level assigned; no del
 - SciPy official bootstrap documentation: resampling, paired, standard_error and interval methods. NumPy was used in the teaching analysis, not SciPy execution. https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.bootstrap.html
 - Think Stats third edition chapter 8: selected sampling-uncertainty material; its main examples use parametric resampling, not the exact empirical bootstrap algorithm here. https://allendowney.github.io/ThinkStats/chap08.html
 - Earlier session selected Geant4 cut documentation and local source plus Livan/Wigmans sampling sections; details in the current concept note. Do not invent book page numbers or claim full-book reading.
-- PDG 2024 Particle Detectors at Accelerators, printed pp.88–90, relevant hadronic-response/neutron-time paragraphs actually read: https://pdg.lbl.gov/2024/reviews/rpp2024-rev-particle-detectors-accel.pdf . Current response example is simplified, not a verified ePIC ZDC model.
+- PDG 2024 Particle Detectors at Accelerators, printed pp.88–92: hadronic response/neutron-time, density weighting/software compensation, and equations35.44–35.45 actually read: https://pdg.lbl.gov/2024/reviews/rpp2024-rev-particle-detectors-accel.pdf . Teaching coefficients are simplified, not a verified ePIC ZDC model.
 
 ### Remaining framework (not a remedial prerequisite wall)
 
@@ -95,4 +97,12 @@ Evaluator: Codex. Date: 2026-10-08. No new formal mastery level assigned; no del
 ### Continuation routing
 
 Read LEARNING_STATE.md for the actual pending question and next step. Do not restart H1 sums, basic standard deviation, independent bootstrap operations or calibration definitions already answered. Do not start simulations as an automatic consequence of discussing an analysis plan.
+
+### Migration and learner edits
+
+- Machine log, historical archive, concept note, state and routing were saved to c113202501-prog/geant4-learning through GitHub contents API and fetched back exactly.
+- After verification, Notion Learning Log was moved to recoverable Trash; banner explicitly confirmed it. Historical body is preserved verbatim as visible text in the archive. Student note remains.
+- Learner subsequently edited the student note and explicitly requested teaching goals/rules and continuation/framework records be English in Git, not Notion. Those requirements are in the teaching protocol/profile, this log and state; preserve learner's Notion edits.
+- Notion Current Learning State opening/current-concept paragraphs now serve as a student-readable overview with explicit links to canonical Git state/log. Old historical evidence is not a second current-state authority.
+- Response-model checkpoint passed; software-compensation assessment also correctly identified density as a proxy and variable weights. Changed-context segmentation judgment case is pending only in LEARNING_STATE.md. Do not repeat the mean-rescaling case.
 
