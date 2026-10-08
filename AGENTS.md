@@ -13,6 +13,8 @@ Read in this order:
 
 Read conditionally:
 
+- `LEARNING_LOG.md` for recent session evidence, hints and remaining framework.
+
 - `LEARNING_PROGRESS.md` for chronology or prior evidence.
 - `GEANT4_LEARNING_PROTOCOL.md` before substantial tutoring or assessment.
 - `GEANT4_PHYSICS_KNOWLEDGE_MAP.md` when locating a concept in the experiment chain.
@@ -26,6 +28,7 @@ If newer relevant progress evidence appears to contradict or postdate the state,
 | Information | Canonical location | Update rule |
 |---|---|---|
 | Current exercise, pending question, next step, active misconception | `LEARNING_STATE.md` | Replace stale current state; keep compact |
+| Session learning evidence, learner quotes and assistance | `LEARNING_LOG.md` | Append by session; refer to state for continuation |
 | Demonstrated milestone or verification evidence | `LEARNING_PROGRESS.md` | Append only; never maintain a second current-state block |
 | Stable learner preferences | `LEARNER_PROFILE.md` | Update only after repeated or explicit confirmation |
 | Geant4 tutoring procedure and mastery criteria | `GEANT4_LEARNING_PROTOCOL.md` | Domain-operational rules only |
@@ -48,7 +51,7 @@ Use `sync_queue` in `LEARNING_STATE.md` only for concrete projections still owed
 - Default learner-facing language: Traditional Chinese.
 - Before substantive tutoring, consult the protocol and current state.
 - Follow: physical meaning → Geant4 abstraction → minimal C++ → runtime behavior → design reason.
-- For an unfamiliar domain concept, model one complete example before guided questions.
+- For a new topic, first ask the learner's own understanding; skip lecture if already clear. If teaching is needed, learner-computed small example precedes formula and guided exercise.
 - Teach one necessary concept at a time and consolidate each learner answer.
 - Label `[FRAMEWORK]`, `[USER]`, and `[EXAMPLE]` when the distinction matters.
 - Distinguish implementation, verification, and understanding status.
@@ -76,3 +79,14 @@ Use `sync_queue` in `LEARNING_STATE.md` only for concrete projections still owed
 Before teaching a new concept, consult `REFERENCES.md`; read only matching sections and check prerequisites against `LEARNING_STATE.md`. Use at most two sources per session, one relevant point each, and explain why each is relevant. Model unfamiliar prerequisites before a prediction; then use the source to verify or extend the learner's reasoning. Cite the source, version and actual section in your own words. Queue a source in the next step if its prerequisites are missing. For uncertain current design versions, state the uncertainty and obtain learner confirmation before treating the document as the current specification. Download records belong in `notes/refs/download-manifest.json`, not in mastery state.
 
 For token-efficient tutoring, use established general knowledge directly; inspect indexed source pages only for exact citations, limits, or source-specific facts. Do not OCR entire books; check text layers first and OCR only the needed unreadable pages. Do not imply access to a complete internal book database.
+
+## 2026-10-08 explicit learner override
+
+Current goal is learning the complete analysis/error-source framework, not running simulations. Do not prepare environments, add events or scan parameters automatically. Source edits still require “你來改”; explicit documentation requests authorize documentation.
+
+For every new topic ask the learner's own understanding first; if clear skip lecture and use an application/judgment case. Teach one concept: purpose → learner-computed small example → sourced formula → applicability plus failure counterexample → learner three-sentence checkpoint → exercise. At checkpoints identify only actual gaps/consequences, not a complete answer template. Feedback: correct portion, real gap/consequence, one follow-up. No invented gaps.
+
+Default difficulty 剛好; two consecutive unaided correct answers require a different context/condition, not just new numbers. At most one retrieval question per concept then a judgment case with a trap. Hints, binary choices, supplied calculations and software success are not independent mastery evidence. If two explanation rounds produce no new executable prediction/code/checkable graph, suggest returning to a small practical task; this does not authorize a simulation campaign.
+
+GitHub LEARNING_LOG.md is for Codex/GPT; LEARNING_STATE.md is the only current snapshot; Notion is a student-readable projection. Preserve historical evidence but do not resume old H1 sums or standard-deviation drills. User's latest instructions supersede older conflicting workflow text below.
+
