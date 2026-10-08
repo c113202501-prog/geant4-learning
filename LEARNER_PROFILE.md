@@ -22,11 +22,8 @@ This file contains only stable, cross-domain preferences explicitly confirmed by
 
 ## Explicit preferences confirmed 2026-10-08
 
-Current goal is learning the complete analysis/error-source framework, not running simulations. Do not prepare environments, add events or scan parameters automatically. Source edits still require “你來改”; explicit documentation requests authorize documentation.
-
-For every new topic ask the learner's own understanding first; if clear skip lecture and use an application/judgment case. Teach one concept: purpose → learner-computed small example → sourced formula → applicability plus failure counterexample → learner three-sentence checkpoint → exercise. At checkpoints identify only actual gaps/consequences, not a complete answer template. Feedback: correct portion, real gap/consequence, one follow-up. No invented gaps.
-
-Default difficulty 剛好; two consecutive unaided correct answers require a different context/condition, not just new numbers. At most one retrieval question per concept then a judgment case with a trap. Hints, binary choices, supplied calculations and software success are not independent mastery evidence. If two explanation rounds produce no new executable prediction/code/checkable graph, suggest returning to a small practical task; this does not authorize a simulation campaign.
-
-GitHub LEARNING_LOG.md is for Codex/GPT; LEARNING_STATE.md is the only current snapshot; Notion is a student-readable projection. Preserve historical evidence but do not resume old H1 sums or standard-deviation drills. User's latest instructions supersede older conflicting workflow text below.
-
+- Goal: complete Geant4/ePIC ZDC analysis framework and error-source judgment. Think Stats supplies case-based understanding, not a required syllabus; HandsOn04 numbering is not the endpoint.
+- Current scope is learning. Prefer small numbers, predictions, existing plots and short code. Do not configure environments or run/add events automatically; actual simulation is considered only for a specific understanding obstacle within authorized scope.
+- First assess existing understanding of each new topic; one concept at a time. Exact procedure and mastery/difficulty rules are maintained in GEANT4_LEARNING_PROTOCOL.md.
+- Default difficulty 剛好 unless the learner says otherwise. Avoid repeated basic formula audits; advance to changed-context applications after demonstrated understanding.
+- GitHub is for machine-friendly Codex/GPT logs and continuation records, preferably English. Preserve original learner quotations in their original language. Notion is for student-readable concepts, worked cases and review. Do not reinsert the tutor directives/continuation records the learner removed there.
