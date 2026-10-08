@@ -278,3 +278,14 @@
 - Reinforcement evidence: learner independently computed `0.04 + 0.06 + 0.10 = 0.20 MeV` and correctly concluded it passes under `>=`; learner also correctly predicted that only the `0.20` and `0.28 MeV` raw hits would pass among `0.13, 0.20, 0.28 MeV`.
 - Mastery for event-integrated accumulated-edep threshold selection: `UNDERSTOOD`, not `INDEPENDENT` or `TRANSFERRED`.
 - No threshold/readout code was added; no new build or run was performed. Raw hits remain unchanged in concept; readout selection is planned as a separate `EventAction`-level step.
+
+
+## 2026-10-08 — sampling/bootstrap framework and record migration
+
+- User scope: framework learning and error-source judgment; no new simulation/environment work requested. Latest tutoring workflow and GitHub-agent/Notion-student split recorded.
+- Learning chain: event units/aggregation → sampling partition/scoring/cuts → bootstrap R and ΔR → N versus B → precision and practical convergence → statistical/systematic sensitivities → calibration and independent validation → EM/hadronic response assessment.
+- Evidence and assistance: LEARNING_LOG.md E01–E11; no new formal mastery rating. Current pending question is maintained only in LEARNING_STATE.md.
+- Historical Notion Learning Log preserved in notes/archive/Notion-Learning-Log-2026-10-08.md, including duplicates and stale next steps marked historical. Student-readable concept note lives in Notion; repository note: notes/2026-10-08-Sampling-Bootstrap-Review.md.
+- Existing executable context: earlier local hodoscope extension/ROOT and B4a cut outputs are indexed in LEARNING_LOG.md. B4a is Pb/liquid-Ar, independent runs, R_f (not R_Egap); no complete leakage account or pure intrinsic resolution claim. Hodoscope 74.79219437246496 MeV entry verified earlier, cause unestablished.
+- Migration work did not modify simulator source, run simulations/build/bootstrap, install packages or publish generated ROOTs. Publishing documentation does not publish local source changes; remote simulator code can be older than recorded local runtime evidence.
+- GitHub documentation is written through the contents API, not a local git push. Local uncommitted source and unrelated files are preserved.
