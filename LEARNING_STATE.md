@@ -8,22 +8,24 @@ last_updated: 2026-10-08
 current_stage: event observables, analysis judgment, calorimeter response
 long_term_goal: ePIC ZDC simulation and complete data-analysis/error-source skills
 current_scope: learning the framework; no new simulation or environment preparation requested
-current_concept: electromagnetic fraction response model; mean calibration versus event fluctuations
-last_completed_unit: calibration purpose and independent validation; shared nuisance parameter sensitivities
+current_concept: software compensation and geometry-dependent input features
+last_completed_unit: response-model checkpoint and software-compensation initial understanding
 pending_question: >-
-  Three-sentence checkpoint: what f_em is; how it affects the reading
-  when electromagnetic/non-electromagnetic responses differ;
-  one situation the simplified model cannot explain directly.
-next_step: Review checkpoint gaps/consequences only; if passed move to a changed-context application, not another mean-rescaling drill
+  Teaching segmentation judgment: compensation weights use cell total signal S,
+  weight1 for S>=3 and weight2 for S<3. A: S=[4,2], volume=[1,1].
+  B: S=[2,2,2], volume=[.5,.5,1]; same shower/total signal, first A cell split.
+  Calculate weighted sums, judge unchanged-rule/greater-energy-collection claims,
+  and propose a check of weight applicability to new geometry.
+next_step: Review segmentation judgment and executable validation idea; one concept only, avoid treating signal density as exact truth labeling
 active_misconception: []
-understanding_gap_to_check: distinction between mean calibration and event-dependent electromagnetic fraction response
+understanding_gap_to_check: none established; pending transfer tests segmentation and weight portability
 current_unit_mastery: no new formal level; do not infer independence or retention from prompted answers
-current_unit_evidence: LEARNING_LOG.md E07-E12 and current note
+current_unit_evidence: LEARNING_LOG.md E07-E14 and current note
 current_note: notes/2026-10-08-Sampling-Bootstrap-Review.md
 student_note: https://app.notion.com/p/Bootstrap-cut-2026-10-08-3f39f5095b9c8015a03ac39680eac6ea
 source_change_authorization: learner must say 你來改
 simulation_action: none requested; treat proposed checks as learning plans
-sync_queue: [project latest response concept to Notion student notes]
+sync_queue: []
 ```
 
 ## Continuation rules
@@ -38,7 +40,7 @@ sync_queue: [project latest response concept to Notion student notes]
 
 - Statistical/systematic distinction and shared-parameter case answered correctly; common parameter does not guarantee cancellation, and more events cannot resolve its uncertainty.
 - Calibration defined as signal-to-energy relation; independent validation includes bias, linearity, resolution and position/angle/species applicability.
-- Electron-to-hadron assessment: learner correctly named different visible response, EM/non-EM components and nuclear binding losses. Tutor clarified that neutron energy may be detected with material/time dependence, rather than being categorically invisible. PDG 2024 pp.88–90 actually read. Learner independently calculated teaching readings 9,6 GeV and mean correction 12,8 GeV; correctly explained calibration of average cannot remove composition fluctuations. Tutor then introduced the simplified response formula and its leakage/saturation limits. Current checkpoint pending.
+- Electron-to-hadron assessment: learner correctly named different visible response, EM/non-EM components and nuclear binding losses. Tutor clarified that neutron energy may be detected with material/time dependence, rather than being categorically invisible. PDG 2024 pp.88–90 actually read. Learner independently calculated teaching readings 9,6 GeV and mean correction 12,8 GeV; correctly explained calibration of average cannot remove composition fluctuations. Tutor then introduced the simplified response formula and its leakage/saturation limits. Learner described f_em and variable h/e, leakage/sampling/light/noise limits; checkpoint passed. The cited .30/.60 are not this exercise's coefficients; tutor noted the mismatch without treating them as simulation facts. Software-compensation assessment correctly identified signal density as a proxy and event-dependent weights; tutor clarified direct local-cell weighting without explicit f_em estimation. Segmentation judgment case pending.
 - Bootstrap/cut: finite original N versus resampling B distinguished after correction. CI containing zero does not establish convergence; practical tolerance needed. No formal equivalence test established. Tail support and pairing limitations recorded in the log.
 - Historical UNDERSTOOD labels in earlier progress retained; no new INDEPENDENT/TRANSFERRED/RETAINED claim.
 
@@ -54,3 +56,7 @@ Local source/readout and existing ROOT evidence are indexed in LEARNING_LOG.md. 
 ## Remaining framework
 
 Response and resolution → hadronic/invisible energy/noncompensation → containment and energy accounts → error budgets/correlations/model validation → fits, likelihood and residuals → visible response/optics/readout as required by actual ZDC design. Cleaning/PMF/CDF/testing are integrated in cases; regression, time-series and survival methods are chosen when a real learning question warrants them. This is not a prerequisite checklist blocking the next concept.
+
+## Record migration status
+
+GitHub files written through contents API and read back exactly. Historical Notion Learning Log was moved to recoverable Trash after that verification. User subsequently edited the student note and explicitly moved teaching directives/continuation framework out of Notion; preserve those edits. English agent records remain in Git. Notion is for concepts, examples and review, not a competing pending-question tracker.
